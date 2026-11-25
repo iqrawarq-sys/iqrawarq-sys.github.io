@@ -1,47 +1,89 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="طالبة بحجاب تتابع حصة القرآن عن بعد على جهاز لوحي ومعها مصحف">
   <defs>
-    <linearGradient id="w-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8f1df"/><stop offset="1" stop-color="#efe3c4"/></linearGradient>
-    <linearGradient id="w-page" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffaf0"/><stop offset="1" stop-color="#eadcb9"/></linearGradient>
-    <linearGradient id="w-wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a8743a"/><stop offset="1" stop-color="#7a4f22"/></linearGradient>
+    <linearGradient id="w-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6eedb"/><stop offset="1" stop-color="#e8dab8"/></linearGradient>
+    <radialGradient id="w-sun" cx=".66" cy=".42" r=".55"><stop offset="0" stop-color="#fff8e3" stop-opacity=".95"/><stop offset="1" stop-color="#fff8e3" stop-opacity="0"/></radialGradient>
+    <linearGradient id="w-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfe3dc"/><stop offset=".7" stop-color="#eef1e2"/><stop offset="1" stop-color="#f7ecd2"/></linearGradient>
+    <linearGradient id="w-frame" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3dc98"/><stop offset=".5" stop-color="#c9a24a"/><stop offset="1" stop-color="#8f6a1f"/></linearGradient>
+    <linearGradient id="w-hijab" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7f505c"/><stop offset=".35" stop-color="#a87683"/><stop offset=".7" stop-color="#9a6875"/><stop offset="1" stop-color="#744652"/></linearGradient>
+    <linearGradient id="w-dress" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#26322d"/><stop offset=".4" stop-color="#3d4c45"/><stop offset="1" stop-color="#222c28"/></linearGradient>
+    <radialGradient id="w-skin" cx=".4" cy=".32" r=".8"><stop offset="0" stop-color="#ebbd92"/><stop offset=".65" stop-color="#d7a477"/><stop offset="1" stop-color="#b98656"/></radialGradient>
+    <linearGradient id="w-page" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffbf2"/><stop offset="1" stop-color="#e6d6b0"/></linearGradient>
+    <linearGradient id="w-cover" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b6a50"/><stop offset="1" stop-color="#0a3427"/></linearGradient>
+    <linearGradient id="w-wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b17b3f"/><stop offset=".45" stop-color="#8d5c29"/><stop offset="1" stop-color="#5f3a15"/></linearGradient>
+    <linearGradient id="w-edge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9a868"/><stop offset="1" stop-color="#a06d35"/></linearGradient>
+    <linearGradient id="w-rahl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9a6630"/><stop offset="1" stop-color="#5a3510"/></linearGradient>
+    <linearGradient id="w-dev" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a4541"/><stop offset="1" stop-color="#1c2421"/></linearGradient>
+    <radialGradient id="w-scr" cx=".5" cy=".35" r=".8"><stop offset="0" stop-color="#1d6b52"/><stop offset="1" stop-color="#0a3427"/></radialGradient>
+    <linearGradient id="w-glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".2"/><stop offset=".42" stop-color="#fff" stop-opacity=".04"/><stop offset=".43" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <radialGradient id="w-glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#3fb98c" stop-opacity=".35"/><stop offset="1" stop-color="#3fb98c" stop-opacity="0"/></radialGradient>
+    <radialGradient id="w-vig" cx=".5" cy=".45" r=".78"><stop offset=".62" stop-color="#2a1d08" stop-opacity="0"/><stop offset="1" stop-color="#2a1d08" stop-opacity=".22"/></radialGradient>
+    <filter id="w-blur" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="5"/></filter>
+    <filter id="w-blur2" x="-30%" y="-80%" width="160%" height="260%"><feGaussianBlur stdDeviation="2.4"/></filter>
+    <clipPath id="w-win"><path d="M192 228V112c0-42 34-72 74-80 40 8 74 38 74 80v116z"/></clipPath>
   </defs>
   <rect width="400" height="300" fill="url(#w-bg)"/>
-  <path d="M192 228V112c0-42 34-72 74-80 40 8 74 38 74 80v116z" fill="#e2ebdc"/>
-  <path d="M192 228V112c0-42 34-72 74-80 40 8 74 38 74 80v116" fill="none" stroke="#c9a24a" stroke-width="2.5"/>
-  <g fill="none" stroke="#c9a24a" stroke-opacity=".45"><path d="M44 40l7 17 17 7-17 7-7 17-7-17-17-7 17-7z"/><circle cx="44" cy="64" r="5"/></g>
+  <rect width="400" height="300" fill="url(#w-sun)"/>
+  <!-- النافذة ومنظر المسجد -->
+  <path d="M192 228V112c0-42 34-72 74-80 40 8 74 38 74 80v116z" fill="url(#w-sky)"/>
+  <g clip-path="url(#w-win)" fill="#a9c4b8" opacity=".75">
+    <path d="M262 228v-52c0-20 16-34 34-38 18 4 34 18 34 38v52z"/>
+    <rect x="311" y="96" width="9" height="132" rx="2"/><path d="M309 98l6.5-16 6.5 16z"/><rect x="308" y="120" width="15" height="5" rx="2"/>
+    <rect x="212" y="110" width="8" height="118" rx="2"/><path d="M210 112l6-14 6 14z"/>
+  </g>
+  <path d="M192 228V112c0-42 34-72 74-80 40 8 74 38 74 80v116" fill="none" stroke="url(#w-frame)" stroke-width="4"/>
+  <path d="M200 228V113c0-37 30-64 66-72 36 8 66 35 66 72v115" fill="none" stroke="#c9a24a" stroke-opacity=".35" stroke-width="1.2"/>
+  <g fill="none" stroke="#c9a24a" stroke-opacity=".5"><path d="M44 40l7 17 17 7-17 7-7 17-7-17-17-7 17-7z"/><circle cx="44" cy="64" r="5"/></g>
+  <!-- ظل الطالبة -->
+  <path d="M222 234c0-40 18-64 52-68 34 4 52 28 52 68z" fill="#3a2a10" opacity=".16" filter="url(#w-blur)"/>
   <!-- الطالبة -->
-  <path d="M214 234c0-40 18-64 52-68 34 4 52 28 52 68z" fill="#33413b"/>
-  <path d="M228 136c-6 30-12 48-20 66h116c-8-18-14-36-20-66z" fill="#8f5f6b"/>
-  <path d="M230 132c0-28 15-46 36-46s36 18 36 46c0 14-6 26-14 34h-44c-8-8-14-20-14-34z" fill="#9c6a76"/>
-  <ellipse cx="266" cy="134" rx="20" ry="24" fill="#d9a77b"/>
-  <path d="M246 126c2-18 10-26 20-26s18 8 20 26c-6-6-13-9-20-9s-14 3-20 9z" fill="#9c6a76"/>
-  <path d="M244 158c8 10 14 14 22 14s14-4 22-14" fill="none" stroke="#7d505b" stroke-width="2"/>
-  <path d="M226 226c6-20 20-28 36-26" fill="none" stroke="#33413b" stroke-width="16" stroke-linecap="round"/>
-  <path d="M308 226c-6-20-20-28-36-26" fill="none" stroke="#33413b" stroke-width="16" stroke-linecap="round"/>
+  <path d="M214 234c0-40 18-64 52-68 34 4 52 28 52 68z" fill="url(#w-dress)"/>
+  <path d="M228 136c-6 30-12 48-20 66h116c-8-18-14-36-20-66z" fill="url(#w-hijab)"/>
+  <path d="M236 160c-4 16-8 28-14 40M296 160c4 16 8 28 14 40M266 176v24" fill="none" stroke="#6c404b" stroke-width="1.3" stroke-linecap="round" opacity=".45"/>
+  <path d="M230 132c0-28 15-46 36-46s36 18 36 46c0 14-6 26-14 34h-44c-8-8-14-20-14-34z" fill="url(#w-hijab)"/>
+  <ellipse cx="266" cy="134" rx="20" ry="24" fill="url(#w-skin)"/>
+  <path d="M246 126c2-18 10-26 20-26s18 8 20 26c-6-6-13-9-20-9s-14 3-20 9z" fill="#94626f"/>
+  <path d="M248 122c5-5 11-7 18-7s13 2 18 7" fill="none" stroke="#6c404b" stroke-width="1.2" opacity=".5"/>
+  <path d="M244 158c8 10 14 14 22 14s14-4 22-14" fill="none" stroke="#6c404b" stroke-width="2"/>
+  <path d="M252 96c6-4 12-5 18-4" fill="none" stroke="#c99aa6" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+  <path d="M226 226c6-20 20-28 36-26" fill="none" stroke="#2c3833" stroke-width="16" stroke-linecap="round"/>
+  <path d="M308 226c-6-20-20-28-36-26" fill="none" stroke="#2c3833" stroke-width="16" stroke-linecap="round"/>
+  <path d="M229 222c6-16 17-22 30-21" fill="none" stroke="#4c5c55" stroke-width="4" stroke-linecap="round" opacity=".6"/>
   <!-- المكتب -->
   <rect x="0" y="232" width="400" height="68" fill="url(#w-wood)"/>
-  <rect x="0" y="232" width="400" height="6" fill="#b98545"/>
+  <g fill="none" stroke="#3b230a" stroke-opacity=".12" stroke-width="1.2"><path d="M0 252c60-4 120 4 190-1s140 3 210-2"/><path d="M0 268c80 3 150-5 220 0s120-4 180 1"/><path d="M0 286c70-3 140 4 200-1s130 2 200-2"/></g>
+  <rect x="0" y="232" width="400" height="7" fill="url(#w-edge)"/>
+  <rect x="0" y="232" width="400" height="1.5" fill="#f0c98e" opacity=".8"/>
+  <!-- ظلال -->
+  <ellipse cx="266" cy="240" rx="40" ry="4" fill="#2a1705" opacity=".4" filter="url(#w-blur2)"/>
+  <ellipse cx="104" cy="239" rx="34" ry="4" fill="#2a1705" opacity=".45" filter="url(#w-blur2)"/>
+  <ellipse cx="104" cy="246" rx="70" ry="10" fill="url(#w-glow)"/>
   <!-- الرحل والمصحف -->
-  <path d="M236 236l30-30 30 30" fill="none" stroke="#7a4f22" stroke-width="7" stroke-linecap="round"/>
-  <path d="M266 214c-12-6-28-7-42-4l-2-32c15-3 31-2 44 5z" fill="#0f4c3a"/>
-  <path d="M266 214c12-6 28-7 42-4l2-32c-15-3-31-2-44 5z" fill="#0f4c3a"/>
+  <path d="M236 236l30-30 30 30" fill="none" stroke="url(#w-rahl)" stroke-width="7" stroke-linecap="round"/>
+  <path d="M237 234l29-28" stroke="#c48d4f" stroke-width="1.6" stroke-linecap="round" opacity=".7"/>
+  <path d="M266 214c-12-6-28-7-42-4l-2-32c15-3 31-2 44 5z" fill="url(#w-cover)"/>
+  <path d="M266 214c12-6 28-7 42-4l2-32c-15-3-31-2-44 5z" fill="url(#w-cover)"/>
+  <path d="M224 210l-2-32M308 210l2-32" stroke="#c9a24a" stroke-width="1.4" opacity=".8"/>
   <path d="M265 210c-11-5-25-6-38-3l-2-28c13-3 27-2 40 4z" fill="url(#w-page)"/>
   <path d="M267 210c11-5 25-6 38-3l2-28c-13-3-27-2-40 4z" fill="url(#w-page)"/>
-  <g stroke="#a8946a" stroke-width="1.6" stroke-linecap="round"><path d="M230 188c10-2 21-1 31 2M231 196c10-2 20-1 30 2M232 204c9-2 18-1 27 2M302 188c-10-2-21-1-31 2M301 196c-10-2-20-1-30 2M300 204c-9-2-18-1-27 2"/></g>
+  <path d="M261 186c2 8 2 16 2 23M271 186c-2 8-2 16-2 23" stroke="#c9b88f" stroke-width="2.5" opacity=".45"/>
+  <g stroke="#8f7c55" stroke-width="1.5" stroke-linecap="round" opacity=".85"><path d="M230 188c10-2 21-1 31 2M231 196c10-2 20-1 30 2M232 204c9-2 18-1 27 2M302 188c-10-2-21-1-31 2M301 196c-10-2-20-1-30 2M300 204c-9-2-18-1-27 2"/></g>
   <!-- الجهاز اللوحي على حامل -->
-  <path d="M84 232l14-24h12l14 24z" fill="#3b4642"/>
-  <rect x="30" y="118" width="148" height="100" rx="10" fill="#26302c" transform="rotate(-4 104 168)"/>
+  <path d="M84 234l14-26h12l14 26z" fill="url(#w-dev)"/>
   <g transform="rotate(-4 104 168)">
-    <rect x="37" y="125" width="134" height="86" rx="5" fill="#0f4c3a"/>
-    <!-- صفحة مصحف على الشاشة -->
+    <rect x="30" y="118" width="148" height="100" rx="10" fill="url(#w-dev)"/>
+    <rect x="37" y="125" width="134" height="86" rx="5" fill="url(#w-scr)"/>
     <rect x="52" y="133" width="72" height="70" rx="3" fill="#fffaf0" stroke="#c9a24a" stroke-width="2"/>
     <rect x="58" y="139" width="60" height="9" rx="2" fill="#e6c97a" opacity=".55"/>
     <g stroke="#a8946a" stroke-width="1.6" stroke-linecap="round"><path d="M60 159h56M60 168h56M60 177h56M60 186h56M60 195h40"/></g>
     <rect x="57" y="164" width="62" height="8" rx="2" fill="#1d6b52" opacity=".18"/>
-    <!-- موجات الصوت -->
     <g stroke="#e6c97a" stroke-width="2.6" stroke-linecap="round"><path d="M136 160v14M143 154v26M150 162v10M157 156v22M164 163v8"/></g>
     <circle cx="150" cy="196" r="7" fill="#e6c97a"/>
     <path d="M148 192.5v7l6-3.5z" fill="#0f4c3a"/>
+    <rect x="37" y="125" width="134" height="86" rx="5" fill="url(#w-glass)"/>
   </g>
-  <!-- غصن -->
-  <g fill="#1d6b52"><path d="M372 232c2-20-6-34-18-42 2 16 8 30 18 42z"/><path d="M368 232c-4-16-14-24-26-26 6 12 14 20 26 26z"/></g>
+  <!-- نبتة في أصيص -->
+  <path d="M348 232l3-20h26l3 20z" fill="#c9a24a"/><path d="M348 212h32" stroke="#8f6a1f" stroke-width="2"/>
+  <g fill="#1d6b52"><path d="M366 212c6-18 2-36-10-46 0 18 2 32 10 46z"/><path d="M362 212c-4-16-14-26-28-28 6 14 16 22 28 28z"/></g>
+  <path d="M364 212c10-10 20-14 30-12-6 8-16 12-30 12z" fill="#2f8a68"/>
+  <rect width="400" height="300" fill="url(#w-vig)"/>
 </svg>

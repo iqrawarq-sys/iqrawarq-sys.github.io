@@ -1,53 +1,99 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="طالب بالدشداشة والكمة يقرأ في المصحف أمام حاسوب في حصة عن بعد">
   <defs>
-    <linearGradient id="m-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8f1df"/><stop offset="1" stop-color="#efe3c4"/></linearGradient>
-    <linearGradient id="m-page" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffaf0"/><stop offset="1" stop-color="#eadcb9"/></linearGradient>
-    <linearGradient id="m-wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a8743a"/><stop offset="1" stop-color="#7a4f22"/></linearGradient>
+    <linearGradient id="m-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6eedb"/><stop offset="1" stop-color="#e8dab8"/></linearGradient>
+    <radialGradient id="m-sun" cx=".34" cy=".42" r=".55"><stop offset="0" stop-color="#fff8e3" stop-opacity=".95"/><stop offset="1" stop-color="#fff8e3" stop-opacity="0"/></radialGradient>
+    <linearGradient id="m-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfe3dc"/><stop offset=".7" stop-color="#eef1e2"/><stop offset="1" stop-color="#f7ecd2"/></linearGradient>
+    <linearGradient id="m-frame" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3dc98"/><stop offset=".5" stop-color="#c9a24a"/><stop offset="1" stop-color="#8f6a1f"/></linearGradient>
+    <linearGradient id="m-cloth" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ddd5c3"/><stop offset=".3" stop-color="#ffffff"/><stop offset=".65" stop-color="#f8f5ee"/><stop offset="1" stop-color="#d2c9b5"/></linearGradient>
+    <radialGradient id="m-skin" cx=".38" cy=".32" r=".8"><stop offset="0" stop-color="#e9bb8d"/><stop offset=".65" stop-color="#d29e6e"/><stop offset="1" stop-color="#b07e52"/></radialGradient>
+    <linearGradient id="m-kumma" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e9e2d0"/><stop offset=".4" stop-color="#fffdf7"/><stop offset="1" stop-color="#ddd4bf"/></linearGradient>
+    <linearGradient id="m-page" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffbf2"/><stop offset="1" stop-color="#e6d6b0"/></linearGradient>
+    <linearGradient id="m-cover" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b6a50"/><stop offset="1" stop-color="#0a3427"/></linearGradient>
+    <linearGradient id="m-wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b17b3f"/><stop offset=".45" stop-color="#8d5c29"/><stop offset="1" stop-color="#5f3a15"/></linearGradient>
+    <linearGradient id="m-edge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9a868"/><stop offset="1" stop-color="#a06d35"/></linearGradient>
+    <linearGradient id="m-rahl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9a6630"/><stop offset="1" stop-color="#5a3510"/></linearGradient>
+    <linearGradient id="m-lap" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a4541"/><stop offset="1" stop-color="#1c2421"/></linearGradient>
+    <radialGradient id="m-scr" cx=".5" cy=".35" r=".8"><stop offset="0" stop-color="#1d6b52"/><stop offset="1" stop-color="#0a3427"/></radialGradient>
+    <linearGradient id="m-glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".2"/><stop offset=".42" stop-color="#fff" stop-opacity=".04"/><stop offset=".43" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <radialGradient id="m-glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#3fb98c" stop-opacity=".35"/><stop offset="1" stop-color="#3fb98c" stop-opacity="0"/></radialGradient>
+    <radialGradient id="m-vig" cx=".5" cy=".45" r=".78"><stop offset=".62" stop-color="#2a1d08" stop-opacity="0"/><stop offset="1" stop-color="#2a1d08" stop-opacity=".22"/></radialGradient>
+    <filter id="m-blur" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="5"/></filter>
+    <filter id="m-blur2" x="-30%" y="-80%" width="160%" height="260%"><feGaussianBlur stdDeviation="2.4"/></filter>
+    <clipPath id="m-win"><path d="M60 228V112c0-42 34-72 74-80 40 8 74 38 74 80v116z"/></clipPath>
   </defs>
   <rect width="400" height="300" fill="url(#m-bg)"/>
-  <!-- نافذة مقوسة -->
-  <path d="M60 228V112c0-42 34-72 74-80 40 8 74 38 74 80v116z" fill="#e2ebdc"/>
-  <path d="M60 228V112c0-42 34-72 74-80 40 8 74 38 74 80v116" fill="none" stroke="#c9a24a" stroke-width="2.5"/>
-  <g fill="none" stroke="#c9a24a" stroke-opacity=".45"><path d="M356 40l7 17 17 7-17 7-7 17-7-17-17-7 17-7z"/><circle cx="356" cy="64" r="5"/></g>
+  <rect width="400" height="300" fill="url(#m-sun)"/>
+  <!-- النافذة ومنظر المسجد -->
+  <path d="M60 228V112c0-42 34-72 74-80 40 8 74 38 74 80v116z" fill="url(#m-sky)"/>
+  <g clip-path="url(#m-win)" fill="#a9c4b8" opacity=".75">
+    <path d="M70 228v-52c0-20 16-34 34-38 18 4 34 18 34 38v52z"/>
+    <rect x="80" y="96" width="9" height="132" rx="2"/><path d="M78 98l6.5-16 6.5 16z"/><rect x="77" y="120" width="15" height="5" rx="2"/>
+    <rect x="178" y="110" width="8" height="118" rx="2"/><path d="M176 112l6-14 6 14z"/>
+    <path d="M150 228v-36c0-12 10-20 20-22 10 2 20 10 20 22v36z"/>
+  </g>
+  <path d="M60 228V112c0-42 34-72 74-80 40 8 74 38 74 80v116" fill="none" stroke="url(#m-frame)" stroke-width="4"/>
+  <path d="M68 228V113c0-37 30-64 66-72 36 8 66 35 66 72v115" fill="none" stroke="#c9a24a" stroke-opacity=".35" stroke-width="1.2"/>
+  <g fill="none" stroke="#c9a24a" stroke-opacity=".5"><path d="M356 40l7 17 17 7-17 7-7 17-7-17-17-7 17-7z"/><circle cx="356" cy="64" r="5"/></g>
+  <!-- ظل الطالب على الجدار -->
+  <path d="M96 232c0-38 18-62 50-66h16c32 4 50 28 50 66z" fill="#3a2a10" opacity=".16" filter="url(#m-blur)"/>
   <!-- الطالب -->
-  <path d="M84 232c0-38 18-62 50-66h16c32 4 50 28 50 66z" fill="#ffffff" stroke="#ddd2b6" stroke-width="2"/>
-  <path d="M142 166v40" stroke="#ddd2b6" stroke-width="2"/>
+  <path d="M84 232c0-38 18-62 50-66h16c32 4 50 28 50 66z" fill="url(#m-cloth)" stroke="#d8cdb0" stroke-width="1.5"/>
+  <path d="M108 232c2-22 8-40 18-52M178 232c-2-22-8-40-18-52" fill="none" stroke="#cfc5ad" stroke-width="1.4" stroke-linecap="round" opacity=".7"/>
   <path d="M142 168c-2 10-2 22 0 34" stroke="#c9a24a" stroke-width="3" stroke-linecap="round"/>
-  <circle cx="142" cy="204" r="3.5" fill="#c9a24a"/>
-  <rect x="133" y="146" width="18" height="22" rx="6" fill="#c8945f"/>
-  <ellipse cx="142" cy="128" rx="25" ry="29" fill="#d6a274"/>
+  <circle cx="142" cy="204" r="3.8" fill="#e6c97a" stroke="#a07c2c" stroke-width="1"/>
+  <path d="M133 152h18v14c0 4-4 6-9 6s-9-2-9-6z" fill="#b7835a"/>
+  <ellipse cx="142" cy="128" rx="25" ry="29" fill="url(#m-skin)"/>
+  <ellipse cx="142" cy="150" rx="15" ry="5" fill="#8f603a" opacity=".18"/>
   <!-- الكمة العمانية -->
-  <path d="M116 122c0-22 12-36 26-36s26 14 26 36c-8-3-17-4-26-4s-18 1-26 4z" fill="#fbf7ec" stroke="#ddd2b6" stroke-width="1.5"/>
+  <path d="M116 122c0-22 12-36 26-36s26 14 26 36c-8-3-17-4-26-4s-18 1-26 4z" fill="url(#m-kumma)" stroke="#d3c8ac" stroke-width="1.3"/>
+  <path d="M117 121c8-3 17-4 25-4s17 1 25 4" fill="none" stroke="#b8ac8e" stroke-width="1.2" opacity=".6"/>
   <g fill="none" stroke="#0f4c3a" stroke-width="1.4" stroke-linecap="round"><path d="M122 112c6-2 13-3 20-3s14 1 20 3"/><path d="M127 101c5-2 10-2 15-2s10 0 15 2"/></g>
   <g fill="#c9a24a"><circle cx="130" cy="106" r="1.5"/><circle cx="142" cy="104" r="1.5"/><circle cx="154" cy="106" r="1.5"/><circle cx="136" cy="94" r="1.3"/><circle cx="148" cy="94" r="1.3"/></g>
   <!-- الذراعان -->
-  <path d="M96 226c6-22 20-30 36-28" fill="none" stroke="#ffffff" stroke-width="16" stroke-linecap="round"/>
-  <path d="M188 226c-6-22-20-30-36-28" fill="none" stroke="#ffffff" stroke-width="16" stroke-linecap="round"/>
+  <path d="M96 226c6-22 20-30 36-28" fill="none" stroke="#efe9dc" stroke-width="17" stroke-linecap="round"/>
+  <path d="M96 226c6-22 20-30 36-28" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" opacity=".8"/>
+  <path d="M188 226c-6-22-20-30-36-28" fill="none" stroke="#e3dccb" stroke-width="17" stroke-linecap="round"/>
+  <path d="M188 226c-6-22-20-30-36-28" fill="none" stroke="#faf7f0" stroke-width="10" stroke-linecap="round" opacity=".8"/>
   <!-- المكتب -->
   <rect x="0" y="232" width="400" height="68" fill="url(#m-wood)"/>
-  <rect x="0" y="232" width="400" height="6" fill="#b98545"/>
+  <g fill="none" stroke="#3b230a" stroke-opacity=".12" stroke-width="1.2"><path d="M0 252c60-4 120 4 190-1s140 3 210-2"/><path d="M0 268c80 3 150-5 220 0s120-4 180 1"/><path d="M0 286c70-3 140 4 200-1s130 2 200-2"/></g>
+  <rect x="0" y="232" width="400" height="7" fill="url(#m-edge)"/>
+  <rect x="0" y="232" width="400" height="1.5" fill="#f0c98e" opacity=".8"/>
+  <ellipse cx="160" cy="248" rx="120" ry="10" fill="#fff3d6" opacity=".07"/>
+  <!-- ظلال على المكتب -->
+  <ellipse cx="142" cy="240" rx="40" ry="4" fill="#2a1705" opacity=".4" filter="url(#m-blur2)"/>
+  <ellipse cx="310" cy="241" rx="86" ry="5" fill="#2a1705" opacity=".45" filter="url(#m-blur2)"/>
+  <ellipse cx="307" cy="246" rx="70" ry="10" fill="url(#m-glow)"/>
   <!-- الرحل والمصحف -->
-  <path d="M112 236l30-30 30 30" fill="none" stroke="#7a4f22" stroke-width="7" stroke-linecap="round"/>
-  <path d="M142 214c-12-6-28-7-42-4l-2-32c15-3 31-2 44 5z" fill="#0f4c3a"/>
-  <path d="M142 214c12-6 28-7 42-4l2-32c-15-3-31-2-44 5z" fill="#0f4c3a"/>
+  <path d="M112 236l30-30 30 30" fill="none" stroke="url(#m-rahl)" stroke-width="7" stroke-linecap="round"/>
+  <path d="M113 234l29-28" stroke="#c48d4f" stroke-width="1.6" stroke-linecap="round" opacity=".7"/>
+  <path d="M142 214c-12-6-28-7-42-4l-2-32c15-3 31-2 44 5z" fill="url(#m-cover)"/>
+  <path d="M142 214c12-6 28-7 42-4l2-32c-15-3-31-2-44 5z" fill="url(#m-cover)"/>
+  <path d="M100 210l-2-32M184 210l2-32" stroke="#c9a24a" stroke-width="1.4" opacity=".8"/>
   <path d="M141 210c-11-5-25-6-38-3l-2-28c13-3 27-2 40 4z" fill="url(#m-page)"/>
   <path d="M143 210c11-5 25-6 38-3l2-28c-13-3-27-2-40 4z" fill="url(#m-page)"/>
-  <g stroke="#a8946a" stroke-width="1.6" stroke-linecap="round"><path d="M106 188c10-2 21-1 31 2M107 196c10-2 20-1 30 2M108 204c9-2 18-1 27 2M178 188c-10-2-21-1-31 2M177 196c-10-2-20-1-30 2M176 204c-9-2-18-1-27 2"/></g>
+  <path d="M137 186c2 8 2 16 2 23M147 186c-2 8-2 16-2 23" stroke="#c9b88f" stroke-width="2.5" opacity=".45"/>
+  <g stroke="#8f7c55" stroke-width="1.5" stroke-linecap="round" opacity=".85"><path d="M106 188c10-2 21-1 31 2M107 196c10-2 20-1 30 2M108 204c9-2 18-1 27 2M178 188c-10-2-21-1-31 2M177 196c-10-2-20-1-30 2M176 204c-9-2-18-1-27 2"/></g>
   <!-- الحاسوب -->
-  <path d="M232 230h150l8 8H224z" fill="#3b4642"/>
-  <rect x="244" y="128" width="126" height="102" rx="7" fill="#26302c"/>
-  <rect x="250" y="134" width="114" height="86" rx="3" fill="#0f4c3a"/>
-  
+  <path d="M232 230h150l8 8H224z" fill="url(#m-lap)"/>
+  <path d="M290 233h34" stroke="#56625d" stroke-width="2" stroke-linecap="round"/>
+  <rect x="244" y="128" width="126" height="102" rx="7" fill="url(#m-lap)"/>
+  <rect x="250" y="134" width="114" height="86" rx="3" fill="url(#m-scr)"/>
   <!-- المعلم على الشاشة -->
-  <path d="M280 220c0-22 11-34 27-36h0c16 2 27 14 27 36z" fill="#f3ecd9"/>
+  <path d="M280 220c0-22 11-34 27-36c16 2 27 14 27 36z" fill="#f3ecd9"/>
+  <path d="M296 220c1-14 5-24 11-30M318 220c-1-14-5-24-11-30" stroke="#d9cfb5" stroke-width="1.2" fill="none"/>
   <ellipse cx="307" cy="168" rx="14" ry="16" fill="#c28f60"/>
   <path d="M293 165c0-12 6-20 14-20s14 8 14 20c-4-2-9-2-14-2s-10 0-14 2z" fill="#fbf7ec"/>
   <path d="M297 158c3-1 7-2 10-2s7 1 10 2" stroke="#0f4c3a" stroke-width="1" fill="none"/>
-  <rect x="254" y="138" width="34" height="12" rx="6" fill="#0a3427"/>
-  <circle cx="261" cy="144" r="3" fill="#e6c97a"/>
-  <rect x="267" y="142" width="17" height="4" rx="2" fill="#e6c97a" opacity=".7"/>
-  <!-- موجات الصوت -->
+  <rect x="254" y="138" width="38" height="12" rx="6" fill="#0a3427"/>
+  <circle cx="261" cy="144" r="3" fill="#e05a4a"/>
+  <rect x="267" y="142" width="20" height="4" rx="2" fill="#e6c97a" opacity=".7"/>
   <g stroke="#e6c97a" stroke-width="2.4" stroke-linecap="round"><path d="M342 200v10M348 196v18M354 202v6"/></g>
-  <!-- غصن -->
-  <g fill="#1d6b52"><path d="M30 232c-2-20 6-34 18-42-2 16-8 30-18 42z"/><path d="M34 232c4-16 14-24 26-26-6 12-14 20-26 26z"/></g>
+  <rect x="250" y="134" width="114" height="86" rx="3" fill="url(#m-glass)"/>
+  <circle cx="307" cy="131" r="1.3" fill="#5c6a65"/>
+  <!-- نبتة في أصيص -->
+  <path d="M20 232l3-20h26l3 20z" fill="#c9a24a"/><path d="M20 212h32" stroke="#8f6a1f" stroke-width="2"/>
+  <g fill="#1d6b52"><path d="M34 212c-6-18-2-36 10-46 0 18-2 32-10 46z"/><path d="M38 212c4-16 14-26 28-28-6 14-16 22-28 28z"/></g>
+  <g fill="#2f8a68"><path d="M36 212c-10-10-20-14-30-12 6 8 16 12 30 12z"/><path d="M36 212c-2-14 2-24 10-30"/></g>
+  <rect width="400" height="300" fill="url(#m-vig)"/>
 </svg>
