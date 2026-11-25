@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 124" role="img" aria-label="أيقونة المراجعة والمتابعة">
+<defs>
+<linearGradient id="rrim" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbeab3"/><stop offset=".3" stop-color="#d9b45c"/><stop offset=".62" stop-color="#8f6a1f"/><stop offset="1" stop-color="#e9cd80"/></linearGradient>
+<radialGradient id="rmed" cx=".36" cy=".3" r=".85"><stop offset="0" stop-color="#23805f"/><stop offset=".55" stop-color="#0f4c3a"/><stop offset="1" stop-color="#062a1e"/></radialGradient>
+<linearGradient id="rgold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c4"/><stop offset=".35" stop-color="#e6c56f"/><stop offset=".7" stop-color="#b38a2e"/><stop offset="1" stop-color="#7d5a17"/></linearGradient>
+<radialGradient id="rshine" cx=".5" cy="0" r=".7"><stop offset="0" stop-color="#fff" stop-opacity=".28"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<filter id="rsh" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#1b2a22" flood-opacity=".35"/></filter>
+<filter id="rosh" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="3" stdDeviation="2.2" flood-color="#000" flood-opacity=".45"/></filter>
+<radialGradient id="rface" cx=".4" cy=".35" r=".75"><stop offset="0" stop-color="#fffdf5"/><stop offset=".8" stop-color="#f1e5c6"/><stop offset="1" stop-color="#d8c494"/></radialGradient>
+</defs>
+<g filter="url(#rsh)"><circle cx="60" cy="60" r="54" fill="url(#rrim)"/></g>
+<circle cx="60" cy="60" r="48.5" fill="url(#rmed)"/>
+<circle cx="60" cy="60" r="48.5" fill="none" stroke="#062a1e" stroke-width="1.5"/>
+<circle cx="60" cy="60" r="44" fill="none" stroke="#c9a24a" stroke-opacity=".4" stroke-dasharray="1 4" stroke-width="1.4" stroke-linecap="round"/>
+<ellipse cx="60" cy="30" rx="38" ry="20" fill="url(#rshine)"/>
+<g filter="url(#rosh)">
+<path d="M28.8 44A36 36 0 1 1 32.4 85.1" fill="none" stroke="#5e4310" stroke-width="8" stroke-linecap="round" transform="translate(0 1.5)"/>
+<path d="M28.8 44A36 36 0 1 1 32.4 85.1" fill="none" stroke="url(#rgold)" stroke-width="7" stroke-linecap="round"/>
+<path d="M30 45.5A34 34 0 0 1 76 30" fill="none" stroke="#fff6d6" stroke-width="1.6" stroke-linecap="round" opacity=".8"/>
+<path d="M24.6 76.6L38.8 79.4 30.6 91.6z" fill="url(#rgold)" stroke="#7d5a17" stroke-width="1" stroke-linejoin="round"/>
+<circle cx="60" cy="62" r="26" fill="url(#rgold)"/>
+<circle cx="60" cy="62" r="23" fill="url(#rface)"/>
+<rect x="59" y="41" width="2" height="5" rx="1" fill="#0f4c3a" transform="rotate(0 60 62)"/><rect x="59" y="41" width="2" height="3" rx="1" fill="#8b7448" transform="rotate(30 60 62)"/><rect x="59" y="41" width="2" height="3" rx="1" fill="#8b7448" transform="rotate(60 60 62)"/><rect x="59" y="41" width="2" height="5" rx="1" fill="#0f4c3a" transform="rotate(90 60 62)"/><rect x="59" y="41" width="2" height="3" rx="1" fill="#8b7448" transform="rotate(120 60 62)"/><rect x="59" y="41" width="2" height="3" rx="1" fill="#8b7448" transform="rotate(150 60 62)"/><rect x="59" y="41" width="2" height="5" rx="1" fill="#0f4c3a" transform="rotate(180 60 62)"/><rect x="59" y="41" width="2" height="3" rx="1" fill="#8b7448" transform="rotate(210 60 62)"/><rect x="59" y="41" width="2" height="3" rx="1" fill="#8b7448" transform="rotate(240 60 62)"/><rect x="59" y="41" width="2" height="5" rx="1" fill="#0f4c3a" transform="rotate(270 60 62)"/><rect x="59" y="41" width="2" height="3" rx="1" fill="#8b7448" transform="rotate(300 60 62)"/><rect x="59" y="41" width="2" height="3" rx="1" fill="#8b7448" transform="rotate(330 60 62)"/>
+<path d="M60 62V46" stroke="#0f4c3a" stroke-width="3" stroke-linecap="round"/>
+<path d="M60 62l9 6" stroke="#0f4c3a" stroke-width="3" stroke-linecap="round"/>
+<path d="M60 62l-6 12" stroke="#c8463a" stroke-width="1.2" stroke-linecap="round"/>
+<circle cx="60" cy="62" r="3" fill="url(#rgold)" stroke="#7d5a17" stroke-width=".8"/>
+<path d="M44 50a22 22 0 0 1 14-10" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".7" fill="none"/>
+</g>
+</svg>

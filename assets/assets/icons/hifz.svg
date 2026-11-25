@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 124" role="img" aria-label="أيقونة الحفظ والإتقان">
+<defs>
+<linearGradient id="hrim" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbeab3"/><stop offset=".3" stop-color="#d9b45c"/><stop offset=".62" stop-color="#8f6a1f"/><stop offset="1" stop-color="#e9cd80"/></linearGradient>
+<radialGradient id="hmed" cx=".36" cy=".3" r=".85"><stop offset="0" stop-color="#23805f"/><stop offset=".55" stop-color="#0f4c3a"/><stop offset="1" stop-color="#062a1e"/></radialGradient>
+<linearGradient id="hgold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c4"/><stop offset=".35" stop-color="#e6c56f"/><stop offset=".7" stop-color="#b38a2e"/><stop offset="1" stop-color="#7d5a17"/></linearGradient>
+<radialGradient id="hshine" cx=".5" cy="0" r=".7"><stop offset="0" stop-color="#fff" stop-opacity=".28"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<filter id="hsh" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#1b2a22" flood-opacity=".35"/></filter>
+<filter id="hosh" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="3" stdDeviation="2.2" flood-color="#000" flood-opacity=".45"/></filter>
+<linearGradient id="hcov" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a8f6b"/><stop offset=".5" stop-color="#136148"/><stop offset="1" stop-color="#07301f"/></linearGradient>
+<linearGradient id="hpg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#d9c696"/><stop offset="1" stop-color="#fff8e6"/></linearGradient>
+<linearGradient id="hrib" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8e2a22"/><stop offset=".5" stop-color="#c8463a"/><stop offset="1" stop-color="#8e2a22"/></linearGradient>
+</defs>
+<g filter="url(#hsh)"><circle cx="60" cy="60" r="54" fill="url(#hrim)"/></g>
+<circle cx="60" cy="60" r="48.5" fill="url(#hmed)"/>
+<circle cx="60" cy="60" r="48.5" fill="none" stroke="#062a1e" stroke-width="1.5"/>
+<circle cx="60" cy="60" r="44" fill="none" stroke="#c9a24a" stroke-opacity=".4" stroke-dasharray="1 4" stroke-width="1.4" stroke-linecap="round"/>
+<ellipse cx="60" cy="30" rx="38" ry="20" fill="url(#hshine)"/>
+<g filter="url(#hosh)">
+<path d="M76 28l8 5v62l-8-4z" fill="url(#hpg)"/>
+<g stroke="#bfa771" stroke-width=".7" opacity=".8"><path d="M77.5 32v58M79.5 33v58M81.5 34.5v58"/></g>
+<path d="M84 33v62" stroke="#c9a24a" stroke-width="1.2"/>
+<path d="M66 89v18l4-3 4 3V89z" fill="url(#hrib)"/>
+<rect x="36" y="26" width="42" height="66" rx="3.5" fill="url(#hcov)"/>
+<rect x="36" y="26" width="6" height="66" rx="2" fill="#062a1e" opacity=".45"/>
+<rect x="45" y="31" width="28" height="56" rx="2" fill="none" stroke="url(#hgold)" stroke-width="1.6"/>
+<rect x="48" y="34" width="22" height="50" rx="1.5" fill="none" stroke="#e6c97a" stroke-opacity=".45" stroke-width=".8"/>
+<g transform="translate(59 59)">
+<rect x="-10" y="-10" width="20" height="20" fill="url(#hgold)"/>
+<rect x="-10" y="-10" width="20" height="20" fill="url(#hgold)" transform="rotate(45)"/>
+<circle r="6.5" fill="#0f4c3a" stroke="#fff1c4" stroke-width="1"/>
+<path d="M0-3.8l1.1 2.6 2.7.2-2 1.8.6 2.7L0 2.1l-2.4 1.4.6-2.7-2-1.8 2.7-.2z" fill="#f3dc98"/>
+</g>
+<path d="M49 40h20M49 78h20" stroke="url(#hgold)" stroke-width="1.2"/>
+<path d="M37 28c10 0 20 0 40 0" stroke="#fff" stroke-opacity=".3" stroke-width="1.2"/>
+</g>
+<path d="M90 26l2.6 6 6 2.6-6 2.6-2.6 6-2.6-6-6-2.6 6-2.6z" fill="url(#hgold)"/>
+<path d="M28 76l1.6 3.8 3.8 1.6-3.8 1.6-1.6 3.8-1.6-3.8-3.8-1.6 3.8-1.6z" fill="url(#hgold)"/>
+</svg>
