@@ -96,9 +96,12 @@ header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--green
 /* المحراب: بطاقات بإطار مقوّس */
 .arch{background:var(--paper);border:1px solid var(--line);border-radius:160px 160px 18px 18px;padding:64px 26px 28px;text-align:center;position:relative}
 .arch::before{content:"";position:absolute;inset:8px;border:1px solid color-mix(in srgb,var(--gold) 45%,transparent);border-radius:152px 152px 12px 12px;pointer-events:none}
-.arch .ic{width:62px;height:62px;margin:0 auto 14px;color:var(--gold)}
+.arch .ic{display:block;width:112px;height:auto;aspect-ratio:120/124;margin:-28px auto 12px;transition:transform .35s ease}
+.arch:hover .ic{transform:translateY(-5px) scale(1.05)}
 .arch p{color:var(--soft);margin-top:8px;font-size:16px}
-.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:40px}
+.grid3{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:40px}
+.grid3 .arch{padding-inline:20px}
+@media(max-width:1180px){.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:900px){.grid3{grid-template-columns:minmax(0,1fr)}.arch{border-radius:120px 120px 18px 18px}.arch::before{border-radius:112px 112px 12px 12px}}
 
 .head{display:flex;flex-direction:column;align-items:center;text-align:center}
@@ -214,6 +217,7 @@ footer .slogan{font-family:var(--f-display);font-weight:700;color:var(--goldl);f
       <a href="#quran">القرآن الكريم</a>
       <a href="#arabic">اللغة العربية</a>
       <a href="#why">لماذا نحن</a>
+      <a href="prices.html">الباقات والأسعار</a>
       <a href="#how">كيف نبدأ</a>
       <a href="#faq">أسئلة شائعة</a>
     </div>
@@ -230,7 +234,7 @@ footer .slogan{font-family:var(--f-display);font-weight:700;color:var(--goldl);f
       <p class="intro">نعلّم القرآن الكريم تلاوةً وتجويدًا وحفظًا، ونعلّم اللغة العربية لأبنائها ولغير الناطقين بها؛ عن بُعد، بخصوصيةٍ تامة، وفي مواعيدَ تناسبك.</p>
       <div class="cta">
         <a class="btn btn-gold wa-link" href="#contact"><svg aria-hidden="true"><use href="#wa"/></svg>احجز الحصة التجريبية</a>
-        <a class="btn btn-line" href="#quran">تعرَّفْ إلى برامجنا</a>
+        <a class="btn btn-line" href="prices.html">الباقات والأسعار</a>
       </div>
       <ul class="chips" aria-label="مميزات الدراسة">
         <li>لجميع الأعمار</li><li>للرجال والنساء</li><li>الحصة الأولى تجريبية</li>
@@ -275,7 +279,7 @@ footer .slogan{font-family:var(--f-display);font-weight:700;color:var(--goldl);f
       <h2>تعرَّفْ إلى اقرأ وارق</h2>
       <p class="lead">في أقلّ من دقيقة: من نحن، وماذا نعلّم، وكيف تبدأ رحلتك معنا.</p>
       <ul class="ticks">
-        <li><svg aria-hidden="true"><use href="#tick"/></svg><span>تلاوةٌ وتجويد، وحفظٌ وإتقان، ومراجعةٌ ومتابعة</span></li>
+        <li><svg aria-hidden="true"><use href="#tick"/></svg><span>تلاوةٌ وتجويد، وحفظٌ وإتقان، ومراجعةٌ ومتابعة، وإجازةٌ بالسند المتصل</span></li>
         <li><svg aria-hidden="true"><use href="#tick"/></svg><span>لجميع الأعمار، للرجال والنساء</span></li>
         <li><svg aria-hidden="true"><use href="#tick"/></svg><span>عن بُعد، بخصوصيةٍ تامة ومواعيدَ مرنة</span></li>
       </ul>
@@ -291,23 +295,28 @@ footer .slogan{font-family:var(--f-display);font-weight:700;color:var(--goldl);f
     <div class="head">
       <svg class="orn" aria-hidden="true"><use href="#orn"/></svg>
       <h2>برامج القرآن الكريم</h2>
-      <p class="lead">ثلاثةُ مساراتٍ تبدأ من حيث أنت، وتسير بك خطوةً خطوةً؛ سواءٌ أكنتَ مبتدئًا في القراءة، أم راغبًا في الحفظ، أم عائدًا بعد انقطاع.</p>
+      <p class="lead">أربعةُ مساراتٍ تبدأ من حيث أنت، وتسير بك خطوةً خطوةً؛ سواءٌ أكنتَ مبتدئًا في القراءة، أم راغبًا في الحفظ، أم عائدًا بعد انقطاع، أم طالبًا للإجازة بالسند المتصل.</p>
     </div>
     <div class="grid3">
       <article class="arch">
-        <svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M32 52c-7-4-15-5-24-3V14c9-2 17-1 24 3 7-4 15-5 24-3v35c-9-2-17-1-24 3z"/><path d="M32 17v35"/><path d="M14 24c4-1 9-1 12 1M14 32c4-1 9-1 12 1M38 25c3-2 8-2 12-1M38 33c3-2 8-2 12-1"/></g></svg>
+        <img class="ic" src="assets/icons/tajweed.svg" width="112" height="116" alt="" loading="lazy">
         <h3>التلاوة والتجويد</h3>
         <p>تصحيحُ مخارج الحروف وصفاتها، وتطبيقُ أحكام التجويد عمليًّا، حتى تقرأ بثقةٍ وطمأنينة.</p>
       </article>
       <article class="arch">
-        <svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M32 6l6 13 14 2-10 10 2 14-12-7-12 7 2-14-10-10 14-2z"/><path d="M20 52h24M24 58h16"/></g></svg>
+        <img class="ic" src="assets/icons/hifz.svg" width="112" height="116" alt="" loading="lazy">
         <h3>الحفظ والإتقان</h3>
         <p>خطةُ حفظٍ مكتوبةٌ تناسب وقتك وقدرتك، مع ربطٍ متينٍ بين الجديد والقديم حتى يثبُت المحفوظ.</p>
       </article>
       <article class="arch">
-        <svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M50 26a19 19 0 1 0 1 12"/><path d="M52 14v12H40"/><path d="M32 22v11l7 5"/></g></svg>
+        <img class="ic" src="assets/icons/review.svg" width="112" height="116" alt="" loading="lazy">
         <h3>المراجعة والمتابعة</h3>
         <p>لمن حفظ ثم انقطع: نُعيد تثبيت محفوظه بجدول مراجعةٍ واضح، ومتابعةٍ مستمرة طوال الأسبوع.</p>
+      </article>
+      <article class="arch">
+        <img class="ic" src="assets/icons/ijazah.svg" width="112" height="116" alt="" loading="lazy">
+        <h3>الإجازة بالسند المتصل</h3>
+        <p>تقرأ القرآن كاملًا على معلمٍ مُجاز، بأداءٍ متقن، وتنال إجازةً مكتوبةً بالسند المتصل إلى النبي ﷺ.</p>
       </article>
     </div>
   </div>
@@ -358,15 +367,15 @@ footer .slogan{font-family:var(--f-display);font-weight:700;color:var(--goldl);f
     </figure>
     <div class="scenes">
       <figure class="scene">
-        <img src="assets/scene-men.svg" width="400" height="300" loading="lazy" alt="طالب بالدشداشة والكمة يقرأ في المصحف أمام حاسوب في حصة عن بُعد">
+        <img src="assets/scene-men.svg?v=2" width="400" height="300" loading="lazy" alt="طالب بالدشداشة والكمة يقرأ في المصحف أمام حاسوب في حصة عن بُعد">
         <figcaption><h3>للرجال</h3><p>تلاوةٌ وتجويدٌ وحفظ، في الوقت الذي يناسب عملك ويومك.</p></figcaption>
       </figure>
       <figure class="scene">
-        <img src="assets/scene-women.svg" width="400" height="300" loading="lazy" alt="طالبة بحجاب تتابع حصة القرآن عن بُعد على جهاز لوحي ومعها مصحف">
+        <img src="assets/scene-women.svg?v=2" width="400" height="300" loading="lazy" alt="طالبة بحجاب تتابع حصة القرآن عن بُعد على جهاز لوحي ومعها مصحف">
         <figcaption><h3>للنساء</h3><p>خصوصيةٌ تامة، ودراسةٌ مريحةٌ من البيت دون عناء التنقّل.</p></figcaption>
       </figure>
       <figure class="scene">
-        <img src="assets/scene-kids.svg" width="400" height="300" loading="lazy" alt="طفل وطفلة يتعلّمان الحروف العربية عن بُعد على جهاز لوحي">
+        <img src="assets/scene-kids.svg?v=2" width="400" height="300" loading="lazy" alt="طفل وطفلة يتعلّمان الحروف العربية عن بُعد على جهاز لوحي">
         <figcaption><h3>للأطفال</h3><p>أسلوبٌ محبَّبٌ يناسب أعمارهم، يبدأ بالحروف وينتهي بإتقان التلاوة.</p></figcaption>
       </figure>
     </div>
@@ -399,6 +408,7 @@ footer .slogan{font-family:var(--f-display);font-weight:700;color:var(--goldl);f
       <details><summary>كيف تُعقد الحصص عن بُعد؟</summary><p>عبر مكالمةِ فيديو أو مكالمةٍ صوتية في الموعد المتّفق عليه، ويكفيك هاتفٌ أو حاسوبٌ واتصالٌ بالإنترنت.</p></details>
       <details><summary>هل يوجد تعليم للنساء؟</summary><p>نعم، الدراسة متاحةٌ للرجال والنساء، مع الحرص التامّ على الخصوصية.</p></details>
       <details><summary>انقطعتُ عن الحفظ مدةً طويلة، فهل أبدأ من جديد؟</summary><p>لا تقلق؛ نبدأ بتقييم ما بقي معك، ثم نضع جدول مراجعةٍ يُعيد المحفوظ قبل إضافة الجديد.</p></details>
+      <details><summary>ما برنامج الإجازة القرآنية بالسند المتصل؟</summary><p>برنامجٌ فرديٌّ تقرأ فيه القرآن الكريم كاملًا، حفظًا أو من المصحف، على معلمٍ مُجاز، بالرواية أو القراءة التي تختارها من القراءات المتواترة. يبدأ باختبار قبولٍ للتأكد من إتقان التلاوة، وعند الختم بأداءٍ متقن تُمنح إجازةً مكتوبةً بالسند المتصل.</p></details>
       <details><summary>كيف أحجز الحصة التجريبية؟</summary><p>اضغط زرّ واتساب في هذه الصفحة، وأرسل اسمك وما تريد تعلّمه، وسنرتّب معك الموعد.</p></details>
     </div>
   </div>
@@ -410,6 +420,7 @@ footer .slogan{font-family:var(--f-display);font-weight:700;color:var(--goldl);f
     <p class="lead">الحصة الأولى تجريبية؛ لتتعرّف إلينا ونتعرّف مستواك قبل أيّ التزام.</p>
     <div class="contact">
       <a class="ct wa-link" href="https://wa.me/96875542204" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true"><use href="#wa"/></svg><span class="ct-t"><small>واتساب — احجز حصتك</small><b>+968 7554 2204</b></span></a>
+      <a class="ct" href="prices.html"><svg aria-hidden="true" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#e6c97a"/><path d="M9 11h14M9 16h14M9 21h9" stroke="#0f4c3a" stroke-width="2.4" stroke-linecap="round"/></svg><span class="ct-t"><small>اطّلع على باقاتنا</small><b>الباقات والأسعار</b></span></a>
       <a class="ct" href="https://www.instagram.com/iqrawarq1/" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true"><use href="#ig"/></svg><span class="ct-t"><small>تابعنا على إنستغرام</small><b>@iqrawarq1</b></span></a>
     </div>
   </div>
