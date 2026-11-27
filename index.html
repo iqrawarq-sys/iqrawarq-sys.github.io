@@ -6,16 +6,16 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>أكاديمية اقرأ وارق</title>
-<meta name="description" content="أكاديمية اقرأ وارق: تعليم القرآن الكريم تلاوةً وتجويدًا وحفظًا، وتعليم اللغة العربية، عن بُعد، لجميع الأعمار، بخصوصية تامة ومواعيد مرنة. الحصة الأولى تجريبية.">
-<link rel="canonical" href="https://iqrawarq-sys.github.io/">
+<meta name="description" content="أكاديمية اقرأ وارق: تعليم القرآن الكريم تلاوةً وتجويدًا وحفظًا، وتعليم اللغة العربية، عن بُعد، لجميع الأعمار، بخصوصية تامة ومواعيد مرنة. الحصة الأولى تجريبية، ومصحف معلِّم مجاني بصوت الحصري.">
+<link rel="canonical" href="https://iqrawarq.com/">
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://iqrawarq-sys.github.io/">
+<meta property="og:url" content="https://iqrawarq.com/">
 <meta property="og:title" content="أكاديمية اقرأ وارق">
 <meta property="og:description" content="معًا نحو جيلٍ بالقرآن يرقى — تعليم القرآن الكريم واللغة العربية عن بُعد.">
 <meta property="og:locale" content="ar_OM">
-<meta property="og:image" content="https://iqrawarq-sys.github.io/assets/og-image.png">
+<meta property="og:image" content="https://iqrawarq.com/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="شعار أكاديمية اقرأ وارق">
@@ -38,6 +38,7 @@
 @font-face{font-family:"IBM Plex Sans Arabic";font-weight:700;font-display:swap;src:url(assets/fonts/plex-arabic-700.woff2) format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
 @font-face{font-family:"IBM Plex Sans Arabic";font-weight:400;font-display:swap;src:url(assets/fonts/plex-latin-400.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2212,U+FEFF,U+FFFD}
 @font-face{font-family:"IBM Plex Sans Arabic";font-weight:700;font-display:swap;src:url(assets/fonts/plex-latin-700.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2212,U+FEFF,U+FFFD}
+@font-face{font-family:"Amiri Quran";font-weight:400;font-display:swap;src:url(assets/fonts/amiri-quran-400.woff2) format("woff2")}
 :root{--f-display:"Aref Ruqaa","Amiri",serif;--f-head:"El Messiri","Segoe UI",sans-serif;--f-body:"IBM Plex Sans Arabic",system-ui,sans-serif}
 :root{color-scheme:light dark;
 --bg:light-dark(#f8f3e6,#0b1f19);--paper:light-dark(#fffdf6,#11291f);--ink:light-dark(#1c2a24,#efe7d2);
@@ -45,7 +46,7 @@
 --gold:light-dark(#b38a2e,#d9b765);--goldl:#e6c97a;--line:light-dark(#e3d7b8,#28453a)}
 :root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
 *{box-sizing:border-box;min-width:0}
-html{scroll-behavior:smooth;scroll-padding-top:76px}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.85 var(--f-body);overflow-x:clip}
 h1,h2,h3{font-family:var(--f-head);font-weight:700;line-height:1.35;text-wrap:balance;margin:0}
@@ -65,17 +66,25 @@ a{color:inherit}
 .btn-line{border:1.5px solid currentColor}
 .btn svg{width:26px;height:26px;flex:none}
 
-/* شريط التنقل */
-header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--green) 94%,transparent);backdrop-filter:blur(8px);color:#f3ecd9;border-bottom:1px solid #c9a24a55}
-.nav{display:flex;align-items:center;gap:16px;padding:10px max(5vw,16px);max-width:1340px;margin-inline:auto;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:var(--f-display);font-size:28px;font-weight:700;line-height:1}
-.brand img{width:46px;height:46px;border-radius:12px;box-shadow:0 0 0 1px #c9a24a88}
+/* شريط التنقل — أخضر داكن جداً بكلمات ذهبية وخط Cairo الواضح */
+@font-face{font-family:"Cairo";font-weight:700;font-display:swap;src:url(assets/fonts/cairo-700.woff2) format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+header{position:sticky;top:0;z-index:10;color:#f3dc98;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56'%3E%3Cg fill='none' stroke='%23e6c97a' stroke-opacity='.10'%3E%3Cpath d='M28 4l7 17 17 7-17 7-7 17-7-17-17-7 17-7z'/%3E%3C/g%3E%3C/svg%3E"),linear-gradient(180deg,#0a2a20,#051a13);box-shadow:0 10px 30px #0008}
+header::before{content:"";position:absolute;inset:0 0 auto;height:4px;background:linear-gradient(90deg,#8f6a1f,#f3dc98 28%,#c9a24a 50%,#f3dc98 72%,#8f6a1f)}
+header::after{content:"";position:absolute;inset:auto 0 0;height:3px;background:linear-gradient(90deg,#8f6a1f,#f3dc98 30%,#c9a24a 50%,#f3dc98 70%,#8f6a1f)}
+.nav{display:flex;align-items:center;gap:16px;padding:13px max(5vw,16px) 12px;max-width:1340px;margin-inline:auto;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:13px;text-decoration:none;font-family:var(--f-display);font-size:34px;font-weight:700;line-height:1;color:var(--goldl);text-shadow:0 2px 0 #000,0 0 18px #e6c97a40}
+.brand img{width:48px;height:48px;border-radius:12px;box-shadow:0 0 0 2px #e6c97a,0 0 0 4px #0a2a20,0 0 0 5px #c9a24a99,0 6px 14px #0006}
 
-.links{display:flex;gap:4px;margin-inline-start:auto;overflow-x:auto;scrollbar-width:none}
-.links a{flex:none;text-decoration:none;padding:10px 12px;border-radius:8px;font-size:16px;min-height:44px;display:flex;align-items:center}
-.links a:hover{background:#ffffff14}
+.links{display:flex;align-items:center;gap:3px;margin-inline-start:auto;overflow-x:auto;scrollbar-width:none}
+.links a{position:relative;flex:none;text-decoration:none;padding:10px;border-radius:10px;font-family:"Cairo",var(--f-head);font-weight:700;font-size:17px;color:#f3dc98;min-height:44px;display:flex;align-items:center;transition:color .2s,background .2s}
+.links a+a::before{content:"";position:absolute;inset-inline-start:-4px;top:50%;width:5px;height:5px;margin-top:-2.5px;background:#c9a24a;transform:rotate(45deg);opacity:.8}
+.links a:hover,.links a:focus-visible,.links a[aria-current]{background:linear-gradient(145deg,#f3dc98,#c9a24a);color:#0a2a20}
+.links a.new{color:#fff}
+.links a.new::after{content:"جديد";margin-inline-start:6px;font-size:11px;line-height:1;padding:3px 6px;border-radius:999px;background:#25D366;color:#062b19}
+.nav .btn-gold{font-family:"Cairo",var(--f-head);background:linear-gradient(145deg,#f7e3a6,#dcb862 55%,#b38a2e);color:#0a2a20;box-shadow:0 4px 14px #0006,inset 0 1px 0 #fff9}
+@media(max-width:1200px){.links a{font-size:16px;padding:9px 8px}}
 .nav .btn{min-height:44px;padding:6px 18px;font-size:16px}
-@media(max-width:760px){.links{order:3;width:100%;margin:0}.nav .btn{margin-inline-start:auto}}
+@media(max-width:760px){.links{order:3;width:100%;margin:0;padding-inline-end:28px;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 34px);mask-image:linear-gradient(to right,transparent 0,#000 34px)}.links a{font-size:16px;padding:8px 10px}.nav .btn{margin-inline-start:auto}}
 
 /* البطل */
 .hero{background:var(--green);color:#f3ecd9;position:relative;overflow:hidden}
@@ -87,6 +96,7 @@ header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--green
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;padding:0;list-style:none}
 .chips li{border:1px solid #c9a24a77;border-radius:999px;padding:4px 14px;font-size:15px;color:#efe3c0}
+.chips a{color:#fff;text-decoration:none}
 .art{aspect-ratio:5/6;max-height:560px;width:100%;margin-inline:auto;filter:drop-shadow(0 18px 30px #0006)}
 .art svg{width:100%;height:100%;display:block}
 .rays{animation:glow 6s ease-in-out infinite alternate}
@@ -107,6 +117,37 @@ header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--green
 .head{display:flex;flex-direction:column;align-items:center;text-align:center}
 .head .lead{text-align:center}
 .orn{width:140px;height:18px;color:var(--gold);margin-bottom:10px}
+
+/* المصحف المعلّم */
+.mus{background:linear-gradient(160deg,#0a3427,#0f4c3a 55%,#145a45);color:#f3ecd9;position:relative;overflow:hidden}
+.mus::before{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cg fill='none' stroke='%23c9a24a' stroke-opacity='.11'%3E%3Cpath d='M40 6l10 24 24 10-24 10-10 24-10-24L6 40l24-10z'/%3E%3C/g%3E%3C/svg%3E")}
+.mus .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(28px,5vw,72px);align-items:center}
+.mus h2{color:#fff!important;font-family:var(--f-display);font-size:clamp(38px,5vw,58px)}
+.mus .lead{color:#e3dcc8}
+.badge{display:inline-block;background:#25D366;color:#062b19;font-weight:700;font-size:14px;padding:3px 14px;border-radius:999px;margin-bottom:10px;font-family:var(--f-head)}
+.mus .ticks li{color:#f3ecd9}
+.mus .ticks svg{color:var(--goldl)}
+.mus .btn-line{color:#f3dc98}
+.mpv{background:#fffaf0;color:#1f2a25;border-radius:12px;padding:9px;box-shadow:0 30px 60px #0006;transform:rotate(-1.5deg);transition:transform .4s}
+.mpv:hover{transform:rotate(0)}
+.mpv .fr{border:3px double #b38a2e;outline:1px solid #d9c08a;outline-offset:4px;margin:6px;border-radius:6px;padding:16px 20px 14px}
+.mpv .top{display:flex;justify-content:space-between;font-family:var(--f-head);font-weight:700;font-size:14px;color:#8f6a1f;border-bottom:1px solid #e3d2a8;padding-bottom:6px}
+.mpv .sb{display:flex;align-items:center;justify-content:center;height:48px;margin:12px 0 6px;border-radius:999px;background:linear-gradient(90deg,#0f4c3a,#176b51 50%,#0f4c3a);color:#e6c97a;font-family:"Amiri Quran",serif;font-size:24px;box-shadow:inset 0 0 0 2px #c9a24a,inset 0 0 0 5px #0f4c3a,inset 0 0 0 6px #c9a24a88}
+.mpv .sk{display:grid;gap:14px;padding:14px 6px 8px}
+.mpv .sk i{display:block;height:14px;border-radius:999px;background:linear-gradient(90deg,#e9dfc6,#f3ecd9 50%,#e9dfc6)}
+.mpv .sk i.on{background:linear-gradient(90deg,#bfe0cf,#d9efe3 50%,#bfe0cf);box-shadow:0 0 0 1px #1d8a5e55}
+.mpv .sk i.s{width:55%;margin-inline:auto}
+.mpv .tip em{background:#1d8a5e!important}
+.mpv .q{font-family:"Amiri Quran","Amiri",serif;font-size:clamp(24px,2.6vw,31px);line-height:2.3;text-align:center}
+.mpv .q .h{color:#a09a8c}.mpv .q .n{color:#c9952a}.mpv .q .p{color:#ef7d00}.mpv .q .an{color:#8f6a1f}
+.mpv .q .on{background:#1d8a5e26;border-radius:8px;box-shadow:0 0 0 1px #1d8a5e55}
+.mpv .bar{display:flex;align-items:center;gap:12px;margin-top:10px;padding:8px 12px;border-radius:999px;background:linear-gradient(180deg,#0a2a20,#051a13);color:#f3dc98;font-size:14px}
+.mpv .bar i{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:linear-gradient(145deg,#f7e3a6,#dcb862 55%,#b38a2e);color:#0a2a20;font-style:normal;font-size:14px}
+.mpv .bar span{flex:1}
+.mpv .bar b{font-weight:400;color:#cdbf95;font-size:13px}
+.mpv .tip{display:inline-flex;align-items:center;gap:8px;margin-top:10px;font-size:14px;color:#4d5c55}
+.mpv .tip em{width:12px;height:12px;border-radius:50%;background:#ef7d00}
+@media(max-width:900px){.mus .wrap{grid-template-columns:minmax(0,1fr)}.mpv{max-width:520px;margin-inline:auto;width:100%}}
 
 /* العربية */
 .arabic{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
@@ -176,6 +217,7 @@ details p{padding-bottom:18px;color:var(--soft)}
 .ct-t{display:flex;flex-direction:column;align-items:flex-start;line-height:1.35}
 .ct small{font-size:16px;color:#efe3c0}
 .ct b{direction:ltr;unicode-bidi:isolate;white-space:nowrap;font-size:clamp(22px,2.4vw,26px);letter-spacing:.02em;color:#fff}
+.ct b.ar{direction:rtl}
 .btn-wa{background:#25D366;color:#062b19;box-shadow:0 6px 18px #0003}
 .btn-wa svg{filter:drop-shadow(0 0 0 #fff)}
 
@@ -214,6 +256,7 @@ footer .slogan{font-family:var(--f-display);font-weight:700;color:var(--goldl);f
     <a class="brand" href="#top"><img src="assets/emblem.png" width="46" height="46" alt="">اقرأ وارق</a>
     <div class="links">
       <a href="#intro">تعرّف إلينا</a>
+      <a href="mushaf.html" class="new">المصحف المعلِّم</a>
       <a href="#quran">القرآن الكريم</a>
       <a href="#arabic">اللغة العربية</a>
       <a href="#why">لماذا نحن</a>
@@ -237,7 +280,7 @@ footer .slogan{font-family:var(--f-display);font-weight:700;color:var(--goldl);f
         <a class="btn btn-line" href="prices.html">الباقات والأسعار</a>
       </div>
       <ul class="chips" aria-label="مميزات الدراسة">
-        <li>لجميع الأعمار</li><li>للرجال والنساء</li><li>الحصة الأولى تجريبية</li>
+        <li>لجميع الأعمار</li><li>للرجال والنساء</li><li>الحصة الأولى تجريبية</li><li><a href="mushaf.html">📖 المصحف المعلِّم مجانًا</a></li>
       </ul>
     </div>
     <div class="art">
@@ -261,7 +304,6 @@ footer .slogan{font-family:var(--f-display);font-weight:700;color:var(--goldl);f
         <path d="M70 590V250C70 130 160 40 250 22c90 18 180 108 180 228v340" fill="none" stroke="#c9a24a" stroke-opacity=".7" stroke-width="2"/>
         <path d="M84 590V252C84 140 166 56 250 38c84 18 166 102 166 214v338" fill="none" stroke="#c9a24a" stroke-opacity=".35" stroke-width="1"/>
       </svg>
-    </div>
     </div>
   </div>
 </section>
@@ -287,6 +329,35 @@ footer .slogan{font-family:var(--f-display);font-weight:700;color:var(--goldl);f
         <a class="btn btn-wa wa-link" href="#contact"><svg aria-hidden="true"><use href="#wa"/></svg>احجز الحصة التجريبية</a>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="band mus" id="mushaf">
+  <div class="wrap">
+    <div>
+      <span class="badge">جديد — مجانًا للجميع</span>
+      <h2>المصحف المعلِّم</h2>
+      <p class="lead">رفيقك اليومي بين الحصص: اقرأ في مصحف المدينة برواية حفص، واستمع إلى كل آيةٍ بصوت الشيخ محمود خليل الحصري في المصحف المعلِّم، وكرّرها حتى تحفظها.</p>
+      <ul class="ticks">
+        <li><svg aria-hidden="true"><use href="#tick"/></svg><span>نصّ مصحف المدينة النبوية كما هو، دون أي تعديل</span></li>
+        <li><svg aria-hidden="true"><use href="#tick"/></svg><span>تلاوة آيةً آية بصوت الحصري والمنشاوي، مع تكرار الآية حتى عشر مرات</span></li>
+        <li><svg aria-hidden="true"><use href="#tick"/></svg><span>وضع التسميع: تختفي الآيات لتقرأها من حفظك ثم تتحقق</span></li>
+        <li><svg aria-hidden="true"><use href="#tick"/></svg><span>وردك اليومي، مع عدّاد للأيام المتتالية وتقدّم الختمة</span></li>
+      </ul>
+      <div class="cta">
+        <a class="btn btn-gold" href="mushaf.html">📖 افتح المصحف المعلِّم</a>
+        <a class="btn btn-line" href="mushaf.html#p=1">ابدأ وردك اليومي</a>
+      </div>
+    </div>
+    <a class="mpv" href="mushaf.html" aria-label="افتح المصحف المعلِّم" style="text-decoration:none;display:block">
+      <div class="fr">
+        <div class="top"><span>سورة الفاتحة</span><span>الجزء الأول</span></div>
+        <div class="sb">سُورَةُ ٱلْفَاتِحَةِ</div>
+        <div class="sk" aria-hidden="true"><i></i><i></i><i class="on"></i><i></i><i class="s"></i></div>
+        <div class="bar"><i>▶</i><span>الفاتحة — الآية ١<br><b>الحصري — المصحف المعلِّم • تكرار ٣ مرات</b></span></div>
+        <span class="tip"><em></em>استمع • كرّر • سمِّع لنفسك • ورد يومي</span>
+      </div>
+    </a>
   </div>
 </section>
 
@@ -409,6 +480,7 @@ footer .slogan{font-family:var(--f-display);font-weight:700;color:var(--goldl);f
       <details><summary>هل يوجد تعليم للنساء؟</summary><p>نعم، الدراسة متاحةٌ للرجال والنساء، مع الحرص التامّ على الخصوصية.</p></details>
       <details><summary>انقطعتُ عن الحفظ مدةً طويلة، فهل أبدأ من جديد؟</summary><p>لا تقلق؛ نبدأ بتقييم ما بقي معك، ثم نضع جدول مراجعةٍ يُعيد المحفوظ قبل إضافة الجديد.</p></details>
       <details><summary>ما برنامج الإجازة القرآنية بالسند المتصل؟</summary><p>برنامجٌ فرديٌّ تقرأ فيه القرآن الكريم كاملًا، حفظًا أو من المصحف، على معلمٍ مُجاز، بالرواية أو القراءة التي تختارها من القراءات المتواترة. يبدأ باختبار قبولٍ للتأكد من إتقان التلاوة، وعند الختم بأداءٍ متقن تُمنح إجازةً مكتوبةً بالسند المتصل.</p></details>
+      <details><summary>ما «المصحف المعلِّم» في الموقع؟ وهل هو مجاني؟</summary><p>نعم، مجانيٌّ للجميع ولا يحتاج إلى تسجيل. نصّ مصحف المدينة النبوية برواية حفص كما هو دون أي تعديل، تستمع فيه إلى كل آيةٍ بصوت الشيخ الحصري أو المنشاوي، وتكرّرها للحفظ، وتسمّع لنفسك، وتتابع وردك اليومي. يُحفظ تقدّمك في جهازك فقط.</p></details>
       <details><summary>كيف أحجز الحصة التجريبية؟</summary><p>اضغط زرّ واتساب في هذه الصفحة، وأرسل اسمك وما تريد تعلّمه، وسنرتّب معك الموعد.</p></details>
     </div>
   </div>
@@ -420,7 +492,8 @@ footer .slogan{font-family:var(--f-display);font-weight:700;color:var(--goldl);f
     <p class="lead">الحصة الأولى تجريبية؛ لتتعرّف إلينا ونتعرّف مستواك قبل أيّ التزام.</p>
     <div class="contact">
       <a class="ct wa-link" href="https://wa.me/96875542204" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true"><use href="#wa"/></svg><span class="ct-t"><small>واتساب — احجز حصتك</small><b>+968 7554 2204</b></span></a>
-      <a class="ct" href="prices.html"><svg aria-hidden="true" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#e6c97a"/><path d="M9 11h14M9 16h14M9 21h9" stroke="#0f4c3a" stroke-width="2.4" stroke-linecap="round"/></svg><span class="ct-t"><small>اطّلع على باقاتنا</small><b>الباقات والأسعار</b></span></a>
+      <a class="ct" href="mushaf.html"><svg aria-hidden="true" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#0a2a20"/><path d="M7 10c3-1.4 6-1.4 9 .6 3-2 6-2 9-.6v12c-3-1.4-6-1.4-9 .6-3-2-6-2-9-.6z" fill="#fffaf0" stroke="#e6c97a" stroke-width="1.4" stroke-linejoin="round"/><path d="M16 10.6v12" stroke="#c9a24a" stroke-width="1.4"/></svg><span class="ct-t"><small>اقرأ واستمع واحفظ</small><b class="ar">المصحف المعلِّم</b></span></a>
+      <a class="ct" href="prices.html"><svg aria-hidden="true" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#e6c97a"/><path d="M9 11h14M9 16h14M9 21h9" stroke="#0f4c3a" stroke-width="2.4" stroke-linecap="round"/></svg><span class="ct-t"><small>اطّلع على باقاتنا</small><b class="ar">الباقات والأسعار</b></span></a>
       <a class="ct" href="https://www.instagram.com/iqrawarq1/" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true"><use href="#ig"/></svg><span class="ct-t"><small>تابعنا على إنستغرام</small><b>@iqrawarq1</b></span></a>
     </div>
   </div>
