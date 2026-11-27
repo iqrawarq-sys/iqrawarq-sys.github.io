@@ -191,7 +191,7 @@
     return loadPage(p).then(function (list) {
       if (page !== p) return;
       ayahs = list; render();
-      if (changed && !after) window.scrollTo({ top: $('qtext').getBoundingClientRect().top + window.scrollY - 160, behavior: 'smooth' });
+      if (changed && !after) { var tb = document.querySelector('.tools'), hh = (document.querySelector('header') || {}).offsetHeight || 0; var top = document.querySelector('.mpage').getBoundingClientRect().top + window.scrollY - hh - (tb ? tb.offsetHeight : 0) - 24; if (window.scrollY > top) window.scrollTo({ top: top, behavior: 'smooth' }); }
       if (after) after();
       if (p < 604) loadPage(p + 1).catch(function () { });
       updateWird();
@@ -200,9 +200,9 @@
 
   function ayEl(i) { return qt.querySelector('.ay[data-i="' + i + '"]'); }
   function select(i, scroll) {
-    var old = qt.querySelector('.ay.sel'); if (old) old.classList.remove('sel');
+    var old = qt.querySelector('.ay.picked'); if (old) old.classList.remove('picked');
     selIdx = i; var e = ayEl(i);
-    if (e) { e.classList.add('sel'); if (scroll) e.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
+    if (e) { e.classList.add('picked'); if (scroll) e.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
   }
 
   // ---------- نافذة الآية ----------
@@ -373,6 +373,8 @@
   function fillSelects() {
     var ss = $('selSurah'); ss.textContent = '';
     meta.surahs.forEach(function (s) { var o = el('option', null, ar(s.n) + '. ' + sname(s.name)); o.value = s.n; ss.appendChild(o); });
+    var dl = $('dlSurah'); dl.textContent = '';
+    meta.surahs.forEach(function (s) { var o = document.createElement('option'); o.value = sname(s.name); dl.appendChild(o); });
     var sj = $('selJuz'); sj.textContent = '';
     for (var j = 1; j <= 30; j++) { var o = el('option', null, 'الجزء ' + JUZ[j - 1]); o.value = j; sj.appendChild(o); }
     ss.addEventListener('change', function () { var s = +this.value; goPage(pageOf(s, 1), function () { selectKey(s, 1); }); });
@@ -426,6 +428,48 @@
     m.classList.add('on');
     if (!khatma) goPage(wird.pos);
   });
+
+  // ---------- البحث عن سورة ----------
+  function norm(t) {
+    return String(t || '').replace(/[\u064B-\u065F\u0670\u06D6-\u06ED\u0640]/g, '')
+      .replace(/[\u0623\u0625\u0622\u0671]/g, '\u0627').replace(/\u0629/g, '\u0647').replace(/\u0649/g, '\u064A')
+      .replace(/^\s*\u0633\u0648\u0631\u0647\s+/, '').replace(/[\u0660-\u0669]/g, function (d) { return '٠١٢٣٤٥٦٧٨٩'.indexOf(d); }).trim();
+  }
+  function findSurah(q) {
+    q = norm(q); if (!q || !meta) return 0;
+    if (/^\d+$/.test(q)) { var n = +q; return n >= 1 && n <= 114 ? n : 0; }
+    var bare = q.replace(/^\u0627\u0644/, '');
+    var hit = 0;
+    meta.surahs.forEach(function (s) { if (!hit && norm(s.name) === q) hit = s.n; });
+    meta.surahs.forEach(function (s) { if (!hit && norm(s.name).replace(/^\u0627\u0644/, '') === bare) hit = s.n; });
+    meta.surahs.forEach(function (s) { if (!hit && norm(s.name).indexOf(bare) >= 0) hit = s.n; });
+    return hit;
+  }
+  function doFind() {
+    var inp = $('inFind'), n = findSurah(inp.value);
+    if (!inp.value.trim()) return;
+    if (!n) { toast('لم نجد سورة بهذا الاسم'); return; }
+    inp.value = ''; inp.blur();
+    goPage(pageOf(n, 1), function () { selectKey(n, 1); });
+  }
+  $('inFind').addEventListener('change', doFind);
+  $('inFind').addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); doFind(); } });
+
+  // ---------- تقليب الصفحات بالسحب (كالمصحف الورقي: السحب يمينًا = الصفحة التالية) ----------
+  (function () {
+    var box = document.querySelector('.mpage'), x0 = 0, y0 = 0, t0 = 0, on = false;
+    if (!box) return;
+    box.addEventListener('touchstart', function (e) { if (e.touches.length !== 1) { on = false; return; } on = true; x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; t0 = Date.now(); }, { passive: true });
+    box.addEventListener('touchend', function (e) {
+      if (!on) return; on = false;
+      var t = e.changedTouches[0], dx = t.clientX - x0, dy = t.clientY - y0;
+      if (Math.abs(dx) > 70 && Math.abs(dx) > Math.abs(dy) * 1.8 && Date.now() - t0 < 700) goPage(page + (dx > 0 ? 1 : -1));
+    }, { passive: true });
+  })();
+
+  // ---------- ارتفاع الشريط العلوي (لتثبيت شريط الأدوات تحته) ----------
+  function setHH() { var h = document.querySelector('header'); if (h) document.documentElement.style.setProperty('--hh', h.offsetHeight + 'px'); }
+  setHH(); window.addEventListener('resize', setHH);
 
   // ---------- البدء ----------
   function fromHash() {
