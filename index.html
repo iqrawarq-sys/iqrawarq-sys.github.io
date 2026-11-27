@@ -170,7 +170,7 @@ header::after{content:"";position:absolute;inset:auto 0 0;height:3px;background:
 /* تعلّم من بيتك */
 .scenes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:40px}
 .scene{margin:0;background:var(--paper);border:1px solid var(--line);border-radius:22px;overflow:hidden}
-.scene img{display:block;width:100%;height:auto;aspect-ratio:4/3;border-bottom:3px solid var(--gold)}
+.scene img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-bottom:3px solid var(--gold)}
 .scene figcaption{padding:18px 22px 22px}
 .scene h3{color:var(--green2)}
 :root[data-theme=dark] .scene h3{color:var(--goldl)}
@@ -434,19 +434,19 @@ footer .slogan{font-family:var(--f-display);font-weight:700;color:var(--goldl);f
       <p class="lead">حصصٌ فرديةٌ عن بُعد عبر الهاتف أو الحاسوب، تناسب أفراد الأسرة جميعًا.</p>
     </div>
     <figure class="family">
-      <img src="assets/photos/family.jpg" srcset="assets/photos/family-640.jpg 640w, assets/photos/family.jpg 928w" sizes="(max-width:1040px) 92vw, 1000px" width="928" height="520" loading="lazy" alt="أسرة عُمانية تتعلّم القرآن معًا عبر جهاز لوحي ومصحف، وفي الخلفية مسجد">
+      <img src="assets/photos/family.jpg?v=3" srcset="assets/photos/family-640.jpg?v=3 640w, assets/photos/family.jpg?v=3 928w" sizes="(max-width:1040px) 92vw, 1000px" width="928" height="520" loading="lazy" alt="أسرة عُمانية تتعلّم القرآن معًا عبر جهاز لوحي ومصحف، وفي الخلفية مسجد">
     </figure>
     <div class="scenes">
       <figure class="scene">
-        <img src="assets/scene-men.svg?v=2" width="400" height="300" loading="lazy" alt="طالب بالدشداشة والكمة يقرأ في المصحف أمام حاسوب في حصة عن بُعد">
+        <img src="assets/photos/learn-men.jpg?v=3" srcset="assets/photos/learn-men-640.jpg?v=3 640w, assets/photos/learn-men.jpg?v=3 1200w" sizes="(max-width:900px) 92vw, 400px" width="1200" height="900" loading="lazy" decoding="async" alt="طالب عُماني بالدشداشة والمصر يتابع حصة القرآن عن بُعد على حاسوبه ومعه المصحف">
         <figcaption><h3>للرجال</h3><p>تلاوةٌ وتجويدٌ وحفظ، في الوقت الذي يناسب عملك ويومك.</p></figcaption>
       </figure>
       <figure class="scene">
-        <img src="assets/scene-women.svg?v=2" width="400" height="300" loading="lazy" alt="طالبة بحجاب تتابع حصة القرآن عن بُعد على جهاز لوحي ومعها مصحف">
+        <img src="assets/photos/learn-women.jpg?v=3" srcset="assets/photos/learn-women-640.jpg?v=3 640w, assets/photos/learn-women.jpg?v=3 1200w" sizes="(max-width:900px) 92vw, 400px" width="1200" height="900" loading="lazy" decoding="async" alt="طالبة محتشمة تتابع حصة القرآن عن بُعد مع معلّمة على الحاسوب وأمامها المصحف">
         <figcaption><h3>للنساء</h3><p>خصوصيةٌ تامة، ودراسةٌ مريحةٌ من البيت دون عناء التنقّل.</p></figcaption>
       </figure>
       <figure class="scene">
-        <img src="assets/scene-kids.svg?v=2" width="400" height="300" loading="lazy" alt="طفل وطفلة يتعلّمان الحروف العربية عن بُعد على جهاز لوحي">
+        <img src="assets/photos/learn-kids.jpg?v=3" srcset="assets/photos/learn-kids-640.jpg?v=3 640w, assets/photos/learn-kids.jpg?v=3 1200w" sizes="(max-width:900px) 92vw, 400px" width="1200" height="900" loading="lazy" decoding="async" alt="طفل عُماني يتعلّم القرآن مع معلّمه عن بُعد على الحاسوب">
         <figcaption><h3>للأطفال</h3><p>أسلوبٌ محبَّبٌ يناسب أعمارهم، يبدأ بالحروف وينتهي بإتقان التلاوة.</p></figcaption>
       </figure>
     </div>
