@@ -265,6 +265,23 @@ footer .slogan{font-family:var(--f-display);font-weight:700;color:var(--goldl);f
 .occs li b{font-family:var(--f-naskh);font-size:17px}
 .occs li>span{font-family:var(--f-naskh);font-size:15px}
 @media(prefers-color-scheme:dark){.today .dates #ptHijri{color:var(--goldl)}}
+/* بطاقة «اليوم» على الجوال: مضغوطة فوق المصحف، وتنفتح بلمسة */
+.tdtoggle{display:none}
+@media(max-width:1020px){
+.today{padding:12px 14px}
+.today h2{display:none}
+.today .clock{font-size:30px;margin-top:0;line-height:1.2}
+.today .dates{font-size:13px;line-height:1.5}
+.today .dates b,.today .dates #ptHijri{font-size:16px}
+.today .pt-next{margin-top:4px;font-size:16px}
+.tdtoggle{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;margin-top:8px;min-height:40px;border:1px solid var(--line);border-radius:12px;background:var(--bg);font-family:var(--f-naskh);font-weight:700;font-size:16px;cursor:pointer;color:var(--ink)}
+.tdtoggle svg{width:18px;height:18px;color:var(--gold);transition:transform .25s}
+.today:not(.open) .tmore{display:none}
+.today.open .tdtoggle svg{transform:rotate(180deg)}
+.today .tdtoggle{order:9}
+.today{display:flex;flex-direction:column}
+.today .clock{order:1}.today .dates{order:2}.today .pt-next{order:3}.today #tdA{order:4}.today #tdB{order:5}
+}
 </style>
 </head>
 <body>
@@ -358,16 +375,21 @@ footer .slogan{font-family:var(--f-display);font-weight:700;color:var(--goldl);f
       <h2 id="tdT"><span class="ic" aria-hidden="true"><svg><use href="#i-mosque"/></svg></span>اليوم</h2>
       <div class="clock" id="ptClock">—</div>
       <p class="dates"><b id="ptWeek">—</b>، <span id="ptHijri">—</span><br><span id="ptGreg">—</span></p>
-      <div class="pt-head"><span>مواقيت الصلاة — <span id="ptPlace">مسقط</span></span><button type="button" id="ptLoc"><svg aria-hidden="true"><use href="#i-pin"/></svg><span id="ptLocT">حسب موقعي</span></button></div>
-      <ul class="ptl" id="ptList" aria-label="مواقيت الصلاة اليوم"></ul>
+      <button type="button" class="tdtoggle" id="tdToggle" aria-expanded="false" aria-controls="tdA tdB"><span id="tdToggleT">مواقيت الصلاة والمناسبات</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="tmore" id="tdA">
+        <div class="pt-head"><span>مواقيت الصلاة — <span id="ptPlace">مسقط</span></span><button type="button" id="ptLoc"><svg aria-hidden="true"><use href="#i-pin"/></svg><span id="ptLocT">حسب موقعي</span></button></div>
+        <ul class="ptl" id="ptList" aria-label="مواقيت الصلاة اليوم"></ul>
+      </div>
       <p class="pt-next" id="ptNext"></p>
-      <p class="occ" id="ptOcc"></p>
-      <details class="occs">
-        <summary>المناسبات الإسلامية خلال العام</summary>
-        <ul id="occList"></ul>
-        <p class="pt-note">تواريخ المناسبات تقريبية حسب تقويم أم القرى، والعبرة بإعلان رؤية الهلال الرسمي في سلطنة عُمان.</p>
-      </details>
-      <p class="pt-note">المواقيت محسوبة فلكيًّا، وقد تختلف دقيقة أو دقيقتين عن التقويم الرسمي.</p>
+      <div class="tmore" id="tdB">
+        <p class="occ" id="ptOcc"></p>
+        <details class="occs">
+          <summary>المناسبات الإسلامية خلال العام</summary>
+          <ul id="occList"></ul>
+          <p class="pt-note">تواريخ المناسبات تقريبية حسب تقويم أم القرى، والعبرة بإعلان رؤية الهلال الرسمي في سلطنة عُمان.</p>
+        </details>
+        <p class="pt-note">المواقيت محسوبة فلكيًّا، وقد تختلف دقيقة أو دقيقتين عن التقويم الرسمي.</p>
+      </div>
     </section>
 
     <section class="card wird" aria-labelledby="wT">

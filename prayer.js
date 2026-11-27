@@ -228,6 +228,14 @@
     }, { timeout: 15000, maximumAge: 864e5 });
   });
 
+  // فتح البطاقة وإغلاقها على الجوال
+  var tg = $('tdToggle');
+  if (tg) tg.addEventListener('click', function () {
+    var card = document.querySelector('.today'), o = card.classList.toggle('open');
+    tg.setAttribute('aria-expanded', String(o));
+    $('tdToggleT').textContent = o ? 'إخفاء المواقيت والمناسبات' : 'مواقيت الصلاة والمناسبات';
+  });
+
   buildFormats();
   setPlace(place);
   setInterval(tick, 1000);
