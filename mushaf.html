@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; media-src 'self' https://everyayah.com; connect-src https://api.alquran.cloud; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; media-src 'self' https://everyayah.com; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>المصحف المعلِّم — أكاديمية اقرأ وارق</title>
 <meta name="description" content="المصحف المعلِّم من أكاديمية اقرأ وارق: مصحف المدينة برواية حفص، بصوت الشيخ محمود خليل الحصري في المصحف المعلّم، مع تكرار الآيات للحفظ، ووضع التسميع، والورد اليومي، ومواقيت الصلاة. مجانًا للجميع.">
@@ -18,10 +18,12 @@
 <meta property="og:image" content="https://iqrawarq.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0f4c3a">
-<link rel="preload" href="assets/fonts/amiri-quran-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/kfgqpc-hafs-18.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="data/hafs/meta.json" as="fetch" crossorigin>
 <link rel="preload" href="assets/fonts/amiri-700.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-@font-face{font-family:"Amiri Quran";font-weight:400;font-display:swap;src:url(assets/fonts/amiri-quran-400.woff2) format("woff2")}
+/* خط المصحف: خط حفص العثماني الرسمي من مجمع الملك فهد لطباعة المصحف الشريف (الإصدار 18) */
+@font-face{font-family:"KFGQPC Hafs";font-weight:400;font-display:block;src:url(assets/fonts/kfgqpc-hafs-18.woff2) format("woff2")}
 @font-face{font-family:"Aref Ruqaa";font-weight:700;font-display:swap;src:url(assets/fonts/aref-ruqaa-700.woff2) format("woff2")}
 @font-face{font-family:"El Messiri";font-weight:700;font-display:swap;src:url(assets/fonts/el-messiri-700.woff2) format("woff2")}
 @font-face{font-family:"IBM Plex Sans Arabic";font-weight:400;font-display:swap;src:url(assets/fonts/plex-arabic-400.woff2) format("woff2")}
@@ -29,7 +31,7 @@
 @font-face{font-family:"Amiri";font-weight:700;font-display:swap;src:url(assets/fonts/amiri-700.woff2) format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+08A0-08FF,U+200C-200E,U+FB50-FDFF,U+FE70-FEFF}
 @font-face{font-family:"Amiri";font-weight:700;font-display:swap;src:url(assets/fonts/amiri-latin-700.woff2) format("woff2");unicode-range:U+0000-00FF,U+2000-206F}
 @font-face{font-family:"Cairo";font-weight:700;font-display:swap;src:url(assets/fonts/cairo-700.woff2) format("woff2")}
-:root{--f-q:"Amiri Quran","Amiri",serif;--f-display:"Aref Ruqaa","Amiri",serif;--f-head:"El Messiri","Segoe UI",sans-serif;--f-body:"IBM Plex Sans Arabic",system-ui,sans-serif;--f-naskh:"Amiri","Amiri Quran",serif;
+:root{--f-q:"KFGQPC Hafs",serif;--f-display:"Aref Ruqaa","Amiri",serif;--f-head:"El Messiri","Segoe UI",sans-serif;--f-body:"IBM Plex Sans Arabic",system-ui,sans-serif;--f-naskh:"Amiri","Amiri Quran",serif;
 color-scheme:light dark;
 --bg:light-dark(#f8f3e6,#0b1f19);--paper:light-dark(#fffdf6,#11291f);--ink:light-dark(#1c2a24,#efe7d2);
 --soft:light-dark(#4d5c55,#b9b29f);--green:#0f4c3a;--green2:light-dark(#0f4c3a,#1d6b52);
@@ -105,9 +107,10 @@ header::after{inset:auto 0 0;height:3px}
 .mframe{border:3px double #b38a2e;border-radius:6px;padding:clamp(14px,2.5vw,30px) clamp(12px,3vw,40px) 18px;outline:1px solid #d9c08a;outline-offset:4px;margin:6px;min-height:40vh}
 .mtop{display:flex;justify-content:space-between;gap:12px;font-family:var(--f-head);font-weight:700;font-size:15px;color:#8f6a1f;border-bottom:1px solid #e3d2a8;padding-bottom:8px;margin-bottom:6px}
 .qtext{font-family:var(--f-q);font-size:var(--qs,clamp(23px,2.7vw,31px));line-height:2.35;text-align:justify;text-align-last:center;word-spacing:.04em}
-.sbanner{display:flex;align-items:center;justify-content:center;margin:14px 0 6px;height:58px;border-radius:999px;background:linear-gradient(90deg,#0f4c3a,#176b51 50%,#0f4c3a);color:var(--goldl);font-family:var(--f-q);font-size:1.05em;line-height:1;box-shadow:inset 0 0 0 2px #c9a24a,inset 0 0 0 5px #0f4c3a,inset 0 0 0 6px #c9a24a88;position:relative}
-.sbanner::before,.sbanner::after{content:"❁";position:absolute;top:50%;transform:translateY(-50%);font-size:22px;color:#e6c97a}
-.sbanner::before{right:22px}.sbanner::after{left:22px}
+.sbanner{position:relative;display:flex;align-items:center;justify-content:center;margin:16px 0 8px;padding:.2em 3.2em .2em;border-radius:12px;background:radial-gradient(ellipse at center,#1a7556 0,#0f4c3a 70%);color:#f3dc98;font-family:var(--f-q);font-size:1.12em;line-height:1.8;text-align:center;box-shadow:inset 0 0 0 2px #c9a24a,inset 0 0 0 6px #0f4c3a,inset 0 0 0 7px #e6c97a,0 4px 12px #0f4c3a33}
+.sbanner::before,.sbanner::after{content:"";position:absolute;top:50%;width:1.1em;height:1.1em;margin-top:-.55em;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%23e6c97a' stroke-width='1.5'%3E%3Crect x='5.5' y='5.5' width='13' height='13'/%3E%3Crect x='5.5' y='5.5' width='13' height='13' transform='rotate(45 12 12)'/%3E%3C/g%3E%3Ccircle cx='12' cy='12' r='2.6' fill='%23e6c97a'/%3E%3C/svg%3E") center/contain no-repeat}
+.sbanner::before{right:.8em}.sbanner::after{left:.8em}
+@media(max-width:600px){.sbanner{padding-inline:2.4em}.sbanner::before{right:.55em}.sbanner::after{left:.55em}}
 .basm{text-align:center;margin:2px 0 4px;color:#0f4c3a}
 .ay{cursor:pointer;border-radius:8px;transition:background .25s;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 @media(hover:hover){.ay:hover{background:#c9a24a1f}}
@@ -115,7 +118,7 @@ header::after{inset:auto 0 0;height:3px}
 .ay.play{background:#1d8a5e26;box-shadow:0 0 0 1px #1d8a5e55}
 .an{color:#8f6a1f;white-space:nowrap}
 .mfoot{text-align:center;margin-top:10px;font-family:var(--f-head);font-weight:700;color:#8f6a1f}
-.mfoot span{display:inline-block;min-width:54px;padding:2px 14px;border:1px solid #c9a24a;border-radius:999px;background:#fff6e0}
+.mfoot span{font-family:var(--f-naskh);font-size:18px;display:inline-block;min-width:54px;padding:2px 14px;border:1px solid #c9a24a;border-radius:999px;background:#fff6e0}
 /* التجويد */
 .tj .t-h,.tj .t-s,.tj .t-l,.tj .t-u,.tj .t-d,.tj .t-b{color:var(--t-silent)}
 .tj .t-m{color:var(--t-m6)}.tj .t-o{color:var(--t-m45)}.tj .t-p{color:var(--t-m246)}.tj .t-n{color:var(--t-m2)}
@@ -340,7 +343,7 @@ footer .slogan{font-family:var(--f-display);font-weight:700;color:var(--goldl);f
         <button class="btn" id="btnNextPage" type="button">الصفحة التالية ←</button>
       </div>
       <p class="note">اضغط على أي آية لتستمع إليها أو تكرّرها أو تشاركها. في وضع التسميع: اضغط على الآية لتظهر بعد أن تقرأها من حفظك.</p>
-      <p class="note">نصّ مصحف المدينة النبوية برواية حفص عن عاصم، من مشروع تنزيل، يُعرض كما هو دون أي تعديل. وإن لاحظت ما يستدعي المراجعة فراسلنا عبر واتساب.</p>
+      <p class="note">نصّ مصحف المدينة النبوية برواية حفص عن عاصم وخطّه، من الإصدار الرسمي لمجمع الملك فهد لطباعة المصحف الشريف، يُعرض كما هو دون أي تعديل. وإن لاحظت ما يستدعي المراجعة فراسلنا عبر واتساب.</p>
     </div>
   </section>
 
@@ -452,7 +455,7 @@ footer .slogan{font-family:var(--f-display);font-weight:700;color:var(--goldl);f
 
 <footer>
   <p class="slogan">معًا نحو جيلٍ بالقرآن يرقى</p>
-  <p>نص المصحف (رواية حفص عن عاصم): <a href="https://tanzil.net" rel="noopener noreferrer" target="_blank">مشروع تنزيل Tanzil.net</a> عبر <a href="https://alquran.cloud" rel="noopener noreferrer" target="_blank">AlQuran.Cloud</a> — التلاوات: <a href="https://everyayah.com" rel="noopener noreferrer" target="_blank">EveryAyah.com</a> — التاريخ الهجري: تقويم أم القرى</p>
+  <p>نص المصحف وخطّه (رواية حفص عن عاصم، خط حفص العثماني): <a href="https://qurancomplex.gov.sa" rel="noopener noreferrer" target="_blank">مجمع الملك فهد لطباعة المصحف الشريف</a> — التلاوات: <a href="https://everyayah.com" rel="noopener noreferrer" target="_blank">EveryAyah.com</a> — التاريخ الهجري: تقويم أم القرى</p>
   <p>© <span id="yr">2026</span> أكاديمية اقرأ وارق</p>
 </footer>
 

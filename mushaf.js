@@ -1,14 +1,14 @@
 // أكاديمية اقرأ وارق — المصحف المعلِّم
-// النص: مصحف المدينة برواية حفص من مشروع تنزيل (عبر api.alquran.cloud، نسخة quran-uthmani) يُعرض كما هو دون أي تعديل — التلاوات: everyayah.com
+// النص والخط: الإصدار الرسمي لمجمع الملك فهد لطباعة المصحف الشريف (خط حفص العثماني، الإصدار 18، hafsData_v18)
+// يُعرض نص كل آية كما ورد في ملف المجمع حرفًا بحرف دون أي تعديل، ومن خادم الموقع نفسه — التلاوات: everyayah.com
 // لا يُجمع أي بيانات؛ التقدّم يُحفظ في متصفح الطالب فقط.
 (function () {
   'use strict';
 
-  var API = 'https://api.alquran.cloud/v1';
+  var DATA = 'data/hafs/';
   var AUDIO = 'https://everyayah.com/data/';
   var SITE = 'https://iqrawarq.com/mushaf.html';
-  var EDITION = 'quran-uthmani';
-  var BASMALA = null; // تُجلب حرفيًّا من المصدر (الفاتحة ١) ولا تُكتب يدويًّا
+  var BASMALA = null; // تُؤخذ حرفيًّا من نص الفاتحة ١ في ملف المجمع
 
   var $ = function (id) { return document.getElementById(id); };
 
@@ -20,10 +20,10 @@
   function ar(n) { return String(n).replace(/\d/g, function (d) { return '٠١٢٣٤٥٦٧٨٩'[d]; }); }
   function pad3(n) { return ('00' + n).slice(-3); }
   function cmp(a, b) { return a[0] - b[0] || a[1] - b[1]; }
-  function sname(name) { // اسم السورة بلا تشكيل ولا علامات قرآنية — لواجهة الموقع
-    return String(name || '').replace(/^سُورَةُ\s*/, '').replace(/[ً-ٰٟۖ-ۭ]/g, '').replace(/ٱ/g, 'ا').trim();
+  function sname(name) { // اسم السورة بلا تشكيل — لواجهة الموقع
+    return String(name || '').replace(/[\u064B-\u065F\u0670\u06D6-\u06ED]/g, '').replace(/\u0671/g, 'ا').trim();
   }
-  function qname(name) { return String(name || '').replace(/^سُورَةُ\s*/, ''); }
+  function qname(name) { return String(name || ''); }
   function today(off) { var d = new Date(); d.setDate(d.getDate() + (off || 0)); return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate(); }
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
   var toastT;
@@ -42,22 +42,17 @@
 
   // ---------- البيانات ----------
   function getJSON(url) {
-    return fetch(url, { credentials: 'omit', referrerPolicy: 'no-referrer' }).then(function (r) {
+    return fetch(url, { credentials: 'same-origin' }).then(function (r) {
       if (!r.ok) throw new Error('HTTP ' + r.status);
       return r.json();
-    }).then(function (j) { if (j.code !== 200) throw new Error('API'); return j.data; });
+    });
   }
 
   function loadMeta() {
-    var m = store.get('meta1', null);
-    if (m && m.surahs && m.surahs.length === 114) { meta = m; return Promise.resolve(m); }
-    return getJSON(API + '/meta').then(function (d) {
-      meta = {
-        surahs: d.surahs.references.map(function (s) { return { n: s.number, name: s.name, count: s.numberOfAyahs }; }),
-        pages: d.pages.references.map(function (r) { return [r.surah, r.ayah]; }),
-        juzs: d.juzs.references.map(function (r) { return [r.surah, r.ayah]; })
-      };
-      store.set('meta1', meta);
+    if (meta) return Promise.resolve(meta);
+    return getJSON(DATA + 'meta.json').then(function (d) {
+      if (!d || !d.surahs || d.surahs.length !== 114 || d.pages.length !== 604) throw new Error('meta');
+      meta = d; BASMALA = d.basmala;
       return meta;
     });
   }
@@ -69,17 +64,30 @@
   }
   function pageOf(s, a) { return meta ? findIdx(meta.pages, [s, a]) + 1 : 1; }
 
+  var juzCache = {};
+  function loadJuz(j) {
+    if (!juzCache[j]) juzCache[j] = getJSON(DATA + 'j' + ('0' + j).slice(-2) + '.json').catch(function (e) { delete juzCache[j]; throw e; });
+    return juzCache[j];
+  }
   function loadPage(p) {
     if (cache[p]) return Promise.resolve(cache[p]);
-    var c = store.get('u1pg' + p, null);
-    if (c && c.length) { cache[p] = c; return Promise.resolve(c); }
-    return getJSON(API + '/page/' + p + '/' + EDITION).then(function (d) {
-      var list = d.ayahs.map(function (x) {
-        return { s: x.surah.number, sn: x.surah.name, a: x.numberInSurah, j: x.juz, t: String(x.text || '') };
+    return loadMeta().then(function () {
+      var j = meta.pj[p - 1];
+      return loadJuz(j).then(function (rows) {
+        var list = [];
+        rows.forEach(function (r) {
+          if (r[2] === p) list.push({ s: r[0], sn: meta.surahs[r[0] - 1].name, a: r[1], j: j, t: String(r[3] || '') });
+        });
+        if (!list.length) throw new Error('page');
+        cache[p] = list;
+        return list;
       });
-      cache[p] = list; store.set('u1pg' + p, list);
-      return list;
     });
+  }
+  // فصل رقم الآية عن نصها: الرقم في آخر نص المجمع، ويرسمه خط المجمع داخل زخرفة نهاية الآية
+  function splitNum(t) {
+    var m = /\s*([\u0660-\u0669]+)$/.exec(t);
+    return m ? { body: t.slice(0, m.index), num: m[1] } : { body: t, num: '' };
   }
 
   // تحويل علامات التجويد [x[نص] أو [x:رقم[نص] إلى مقاطع
@@ -133,11 +141,11 @@
     function newFlow() { flow = el('div', 'flow'); frag.appendChild(flow); }
     newFlow();
     ayahs.forEach(function (ay, i) {
-      var segs = parse(ay.t);
-      if (ay.a === 1 && ay.s !== 1) segs = stripBasmala(segs, ay);
+      var parts = splitNum(ay.t);
+      var segs = [{ c: '', x: parts.body }];
       if (ay.a === 1) {
         frag.appendChild(el('div', 'sbanner', 'سُورَةُ ' + qname(ay.sn)));
-        var bs = ay.basm || BASMALA;
+        var bs = BASMALA;
         if (ay.s !== 1 && ay.s !== 9 && bs) frag.appendChild(el('div', 'basm', bs));
         newFlow();
       }
@@ -153,7 +161,7 @@
       });
       sp.appendChild(w);
       sp.appendChild(document.createTextNode(' '));
-      sp.appendChild(el('span', 'an', '۝' + ar(ay.a)));
+      sp.appendChild(el('span', 'an', parts.num || ar(ay.a)));
       flow.appendChild(sp);
       flow.appendChild(document.createTextNode(' '));
     });
@@ -428,10 +436,6 @@
   }
   applyPrefs();
   updateWird();
-  BASMALA = store.get('u1basm', null);
-  if (!BASMALA) getJSON(API + '/ayah/1/' + EDITION).then(function (d) {
-    BASMALA = String(d.text || '').trim(); store.set('u1basm', BASMALA);
-  }).catch(function () { });
   loadMeta().then(function () {
     fillSelects(); updateWird();
     var h = fromHash();
